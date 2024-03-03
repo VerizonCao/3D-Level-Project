@@ -79,11 +79,11 @@ public class PlayerController : MonoBehaviour {
             cameraForward * movementInput.y + 
             cameraRight * movementInput.x
         );
-        Debug.DrawLine(
-            playerCamera.transform.position,
-            playerCamera.transform.position + dirVector * 10,
-            Color.blue
-        );
+        //Debug.DrawLine(
+        //    playerCamera.transform.position,
+        //    playerCamera.transform.position + dirVector * 10,
+        //    Color.blue
+        //);
 
         // Apply Movement
         rb.AddForce(dirVector * currentMomentum * 2, ForceMode.Force);
