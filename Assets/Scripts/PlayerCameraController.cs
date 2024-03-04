@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCameraController : MonoBehaviour {
 
     [Header(" - Designer Variables - ")]
-    [SerializeField] [Range(0, 1)] private float lerpMoveSpeed = 0.5f;
+    //[SerializeField] [Range(0, 1)] private float lerpMoveSpeed = 0.5f;
     [SerializeField] LayerMask groundLayers; // just includes the Ground layer
 
     public Transform cameraTarget;
