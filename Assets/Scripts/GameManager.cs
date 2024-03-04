@@ -8,6 +8,15 @@ public class GameManager : MonoBehaviour
 {
     static public GameManager Instance;
 
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Fall,
+        Winter
+    }
+    [SerializeField] private Season season;
+
     [SerializeField] private Vector3 playerPosition;
     public List<string> itemList = new List<string>();
 
@@ -28,6 +37,27 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void SwitchSeason(Season newSeason)
+    {
+        switch (newSeason)
+        {
+            case Season.Spring:
+                SceneManager.LoadScene("SpringScene");
+                break;
+            case Season.Summer:
+                SceneManager.LoadScene("SummerScene");
+                break;
+            case Season.Fall:
+                SceneManager.LoadScene("FallScene");
+                break;
+            case Season.Winter:
+                SceneManager.LoadScene("WinterScene");
+                break;
+            default:
+                Debug.LogError("Invalid season specified.");
+                break;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

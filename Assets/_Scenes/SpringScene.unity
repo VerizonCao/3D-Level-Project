@@ -185,63 +185,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1001 &81524651
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1220884620355422056, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_Name
-      value: SeasonChange
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -58.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -39.359863
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023030917171761604, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c0dd6efa74118c64980514b7abb12417, type: 3}
 --- !u!1 &118973002
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +372,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 76159169}
-  m_Father: {fileID: 1854073849}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -938,7 +881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e183e90dbfc3f94a94b8fe3dfa106e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
   playerPosition: {x: -50, y: 10, z: -50}
   itemList: []
   targetCanvas: {fileID: 455344152}
@@ -955,8 +897,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 455344153}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1335587217182001320
@@ -1030,6 +971,6 @@ SceneRoots:
   - {fileID: 1818380941}
   - {fileID: 1854073849}
   - {fileID: 1082261490}
+  - {fileID: 455344153}
   - {fileID: 1335587217182001320}
   - {fileID: 1598058329}
-  - {fileID: 81524651}
