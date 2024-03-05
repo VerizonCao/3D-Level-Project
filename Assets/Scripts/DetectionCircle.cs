@@ -24,7 +24,7 @@ public class DetectionCircle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("here triggered");
+            //Debug.Log("here triggered");
             isTriggered = true;
         }
     }
@@ -34,7 +34,7 @@ public class DetectionCircle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("here leave trigger");
+            //Debug.Log("here leave trigger");
             isTriggered = false;
         }
     }
