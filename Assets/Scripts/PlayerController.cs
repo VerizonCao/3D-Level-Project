@@ -8,13 +8,21 @@ public class PlayerController : MonoBehaviour {
         jumping,
         falling
     }
-    playerState currentState = playerState.falling;
+    enum AnimState
+    {
+        idle,
+        jumping,
+        walking
+    }
+    [SerializeField] playerState currentState = playerState.falling;
+    [SerializeField] AnimState animState = AnimState.idle;
+
     float currentMomentum = 0f;
     float currentAcceleration = 0f;
 
     [Header(" - Designer Variables - ")]
-    [SerializeField] private float baseMomentum = 6;
-    [SerializeField] private float maxMomentum = 12;
+    [SerializeField] private float baseMomentum = 8;
+    [SerializeField] private float maxMomentum = 16;
     [SerializeField] private float groundAcceleration = 1;
     [SerializeField] private float gravityStrength = 32;
     [SerializeField] private float maxJumpForce = 350;
@@ -45,6 +53,8 @@ public class PlayerController : MonoBehaviour {
     Vector3 cameraRight;
     Vector3 dirVector;
 
+    [SerializeField] Animator animator;
+
     private void Awake() {
         PIC = new PlayerControls();
         PIC.PlayerInput.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
@@ -57,6 +67,12 @@ public class PlayerController : MonoBehaviour {
     }
     private void OnDisable() {
         PIC.Disable();
+    }
+
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -79,11 +95,11 @@ public class PlayerController : MonoBehaviour {
             cameraForward * movementInput.y + 
             cameraRight * movementInput.x
         );
-        //Debug.DrawLine(
-        //    playerCamera.transform.position,
-        //    playerCamera.transform.position + dirVector * 10,
-        //    Color.blue
-        //);
+        Debug.DrawLine(
+            playerCamera.transform.position,
+            playerCamera.transform.position + dirVector * 10,
+            Color.blue
+        );
 
         // Apply Movement
         rb.AddForce(dirVector * currentMomentum * 2, ForceMode.Force);
