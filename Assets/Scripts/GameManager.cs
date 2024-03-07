@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public List<string> itemList = new List<string>();
 
     [SerializeField] private Canvas targetCanvas;
+    [SerializeField] TextMeshProUGUI uppertext;
     [SerializeField] private GameObject itemPrefab;
     private Transform itemsParent;
 
@@ -127,11 +129,20 @@ public class GameManager : MonoBehaviour
 
     public void UseItem(string useItem)
     {
+        if (!itemList.Contains(useItem))
+        {
+            Debug.Log("Try to use not having item: " + useItem);
+            //show text to upper ui
+            uppertext.text = "You don't have " + useItem;
+            uppertext.enabled = true;
+            StartCoroutine(DisableUpperText());
+            return;
+        }
         itemList.Remove(useItem);
         Debug.Log(useItem + " used.");
 
         // Find the item object in the scene
-        GameObject itemObject = GameObject.Find(useItem + "(Clone)");
+        GameObject itemObject = GameObject.Find(useItem);
 
         if (itemObject != null)
         {
@@ -139,11 +150,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator DisableUpperText()
+    {
+        yield return new WaitForSeconds(2);
+        uppertext.enabled = false;
+    }
+
     private void CreateItemUI()
     {
         // Instantiate a new itemPrefab as a child of itemsParent
         GameObject newItemObject = Instantiate(itemPrefab, itemsParent);
         Text itemNameText = newItemObject.transform.Find("Item Name").GetComponent<Text>();
+        newItemObject.name = itemList[itemList.Count - 1];
 
         if (itemNameText != null && itemList.Count > 0)
         {

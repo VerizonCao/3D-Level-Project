@@ -246,6 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782893a7d4487fa48b9d69cd99ff8ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 2
+  animState: 0
   baseMomentum: 6
   maxMomentum: 12
   groundAcceleration: 1
@@ -262,6 +264,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  animator: {fileID: 0}
 --- !u!1 &7210585570640940073
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +358,7 @@ GameObject:
   - component: {fileID: 1880385293542629896}
   m_Layer: 0
   m_Name: Facing Indicator
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

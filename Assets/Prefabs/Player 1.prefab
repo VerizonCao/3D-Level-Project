@@ -125,7 +125,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5767326864023202537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,11 +140,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 2
   animState: 0
-  baseMomentum: 8
-  maxMomentum: 16
+  baseMomentum: 6
+  maxMomentum: 12
   groundAcceleration: 1
   gravityStrength: 32
-  maxJumpForce: 350
+  maxJumpForce: 250
   groundFriction: 0.97
   airFriction: 0.95
   playerCameraPrefab: {fileID: 126203276287791749, guid: 18af0f5c6ad7e214e971916e8910518e, type: 3}
@@ -156,7 +156,8 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
-  animator: {fileID: 0}
+  animator: {fileID: 5074520615695266925}
+  jumpClip: {fileID: 7400000, guid: c5fe03da176b8014db41fe4b1daebd2a, type: 2}
 --- !u!1 &7243865815745994761
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +402,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5450526443423814944, guid: 5865f91438f9de8428f28c91c0dfcee8, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5865f91438f9de8428f28c91c0dfcee8, type: 3}
       propertyPath: m_Name
       value: Model
@@ -414,7 +419,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5865f91438f9de8428f28c91c0dfcee8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7490177527022049850}
+      addedObject: {fileID: 5074520615695266925}
     - targetCorrespondingSourceObject: {fileID: -5450526443423814944, guid: 5865f91438f9de8428f28c91c0dfcee8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1074537856413851326}
@@ -443,14 +448,14 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0479989, y: 1.9377304, z: 1.0463778}
+  m_Size: {x: 0.7, y: 1.9377304, z: 0.8}
   m_Center: {x: 0.005504447, y: 0.968, z: 0.14563861}
 --- !u!1 &2577673390450934542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5865f91438f9de8428f28c91c0dfcee8, type: 3}
   m_PrefabInstance: {fileID: 3388067682539748959}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7490177527022049850
+--- !u!95 &5074520615695266925
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

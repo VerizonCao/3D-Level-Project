@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     enum playerState {
@@ -10,9 +11,11 @@ public class PlayerController : MonoBehaviour {
     }
     enum AnimState
     {
-        idle,
-        jumping,
-        walking
+        idle = 0,
+        walking = 1,
+        jumping = 2,
+        pickFruit = 3,
+        petAnimal = 4,
     }
     [SerializeField] playerState currentState = playerState.falling;
     [SerializeField] AnimState animState = AnimState.idle;
@@ -21,11 +24,11 @@ public class PlayerController : MonoBehaviour {
     float currentAcceleration = 0f;
 
     [Header(" - Designer Variables - ")]
-    [SerializeField] private float baseMomentum = 8;
-    [SerializeField] private float maxMomentum = 16;
+    [SerializeField] private float baseMomentum = 6;
+    [SerializeField] private float maxMomentum = 12;
     [SerializeField] private float groundAcceleration = 1;
     [SerializeField] private float gravityStrength = 32;
-    [SerializeField] private float maxJumpForce = 350;
+    [SerializeField] private float maxJumpForce = 250;
     [SerializeField][Range(0f, 1f)] private float groundFriction = 0.97f;
     [SerializeField][Range(0f, 1f)] private float airFriction = 0.95f;
 
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 dirVector;
 
     [SerializeField] Animator animator;
+    [SerializeField] AnimationClip jumpClip;
 
     private void Awake() {
         PIC = new PlayerControls();
@@ -72,7 +76,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        
     }
 
     void Update() {
@@ -84,9 +88,17 @@ public class PlayerController : MonoBehaviour {
         if (jumpHold && PIC.PlayerInput.Jump.WasReleasedThisFrame()) {
             jumpHold = false;
         }
+
+    }
+
+    private void changePlayerState(playerState state)
+    {
+        currentState = state;
     }
 
     private void FixedUpdate() {
+
+
         // Find the camera's forward and right vector on the XZ plane to figure out
         // how to move the player in the direction indicated by the input collected
         cameraForward = Vector3.ProjectOnPlane(playerCamera.transform.forward, transform.up);
@@ -101,14 +113,29 @@ public class PlayerController : MonoBehaviour {
             Color.blue
         );
 
+        if (dirVector != Vector3.zero && animState != AnimState.jumping)
+        {
+            // if the player is not jumping, we play walking anim
+            animState = AnimState.walking;
+            animator.SetInteger("PlayerState", (int)animState);
+        }
+        else if (dirVector == Vector3.zero && animState != AnimState.jumping)
+        {
+            // if the player is not jumping, we play idle anim
+            animState = AnimState.idle;
+            animator.SetInteger("PlayerState", (int)animState);
+        }
+
         // Apply Movement
         rb.AddForce(dirVector * currentMomentum * 2, ForceMode.Force);
 
+
+
         // Current State Logic
-        switch(currentState) {
+        switch (currentState) {
             case playerState.grounded:
                 if (!IsOnGround()) {
-                    currentState = playerState.falling;
+                    changePlayerState(playerState.falling);
                 }
 
                 if (ReceivingMovementInput()) {
@@ -134,12 +161,12 @@ public class PlayerController : MonoBehaviour {
                 // Jump End
                 float minimumForce = 1;
                 if (jumpForce < minimumForce) {
-                    currentState = playerState.falling;
+                    changePlayerState(playerState.falling);
                 }
                 break;
             case playerState.falling:
                 if (IsOnGround()) {
-                    currentState = playerState.grounded;
+                    changePlayerState(playerState.grounded);
                 }
                 break;
         }
@@ -165,6 +192,9 @@ public class PlayerController : MonoBehaviour {
         if (!ReceivingMovementInput() && rb.velocity.sqrMagnitude < 0.35f) {
             rb.velocity = Vector3.zero;
         }
+
+
+        
 
     }
 
@@ -205,9 +235,29 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void StartJump() {
-        currentState = playerState.jumping;
+        
+        StartCoroutine(JumpDuration());
+        StartCoroutine(EnforceJumpForce());
+    }
+
+    private IEnumerator EnforceJumpForce()
+    {
+        yield return new WaitForSeconds(0.4f);
+        changePlayerState(playerState.jumping);
         jumpHold = true;
         jumpForce = maxJumpForce;
+    }
+
+    private IEnumerator JumpDuration()
+    {
+        // change player anim to jump
+        animState = AnimState.jumping;
+
+        animator.SetInteger("PlayerState", (int)animState);
+        yield return new WaitForSeconds(jumpClip.length / 1.6f);  //1.2f is hardcoded now. 
+
+        animState = AnimState.idle;
+        animator.SetInteger("PlayerState", (int)animState);
     }
 
     public bool ReceivingMovementInput() {
