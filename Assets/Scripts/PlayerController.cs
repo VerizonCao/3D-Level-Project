@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField][Range(0f, 1f)] private float groundFriction = 0.97f;
     [SerializeField][Range(0f, 1f)] private float airFriction = 0.95f;
 
+
     [Header(" - References - ")]
     [SerializeField] private GameObject playerCameraPrefab;
     [Space]
@@ -47,6 +48,18 @@ public class PlayerController : MonoBehaviour {
     private GameObject playerCamera;
     private PlayerCameraController pcc;
 
+    // 1st Camera 
+    // This is only used in certain game scenary.
+    // dont allow move for now.
+    [SerializeField] Camera FirstViewCamera;
+    [SerializeField] AudioListener firstViewAudio;
+    private Vector2 lookInput;
+    private float lookSpeed = 2f;
+    private float cameraPitch = 0f;
+    [SerializeField] float firstCameraVerticalMax = 90f;
+    [SerializeField] float firstCameraVerticalMin = -90f;
+    [SerializeField] bool useFirstViewCamera = false;
+
     // Input Variables
     PlayerControls PIC;
     bool jumpHold = false;
@@ -59,10 +72,16 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] Animator animator;
     [SerializeField] AnimationClip jumpClip;
 
+
+    [Header(" - Debug - ")]
+    [SerializeField] bool stopGravity = false;
+
+
     private void Awake() {
         PIC = new PlayerControls();
         PIC.PlayerInput.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
         PIC.PlayerInput.Jump.started += ctx => print("JUMP START");
+        PIC.PlayerInput.CameraMove.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
         SpawnPlayerCamera();
     }
     // Enable/Disable Input Gathering
@@ -89,6 +108,26 @@ public class PlayerController : MonoBehaviour {
             jumpHold = false;
         }
 
+        // switch between first view / 3rd view
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Switch to camera mode " + (useFirstViewCamera ? "firstVuew" : "thirdView"));
+            useFirstViewCamera = !useFirstViewCamera;
+            if (useFirstViewCamera)
+            {
+                FirstViewCamera.enabled = true;
+                firstViewAudio.enabled = true;
+                playerCamera.SetActive(false);
+            }
+            else
+            {
+                FirstViewCamera.enabled = false;
+                firstViewAudio.enabled = false;
+                playerCamera.SetActive(true);
+            }
+        }
+
+
     }
 
     private void changePlayerState(playerState state)
@@ -97,6 +136,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+
+        if (useFirstViewCamera)
+        {
+            // Horizontal rotation
+            transform.Rotate(Vector3.up * lookInput.x * lookSpeed);
+
+
+            // Vertical rotation
+            cameraPitch -= lookInput.y * lookSpeed;
+            cameraPitch = Mathf.Clamp(cameraPitch, firstCameraVerticalMin, firstCameraVerticalMax);
+            FirstViewCamera.transform.localEulerAngles = Vector3.right * cameraPitch;
+
+            return;
+        }
 
 
         // Find the camera's forward and right vector on the XZ plane to figure out
@@ -172,7 +225,11 @@ public class PlayerController : MonoBehaviour {
         }
 
         // Applying Gravity
-        rb.AddForce(Vector3.down * gravityStrength, ForceMode.Force);
+        if (!stopGravity)
+        {
+            rb.AddForce(Vector3.down * gravityStrength, ForceMode.Force);
+        }
+        
 
         // ----- Applying Friction Forces
         // Ground Friction

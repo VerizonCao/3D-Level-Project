@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject itemPrefab;
     private Transform itemsParent;
 
+    [SerializeField] bool refuseTeleport = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -67,7 +69,11 @@ public class GameManager : MonoBehaviour
         PlayerController player = FindObjectOfType<PlayerController>();
         if (player != null)
         {
-            player.transform.position = GameManager.Instance.playerPosition;
+            if (!refuseTeleport)
+            {
+                player.transform.position = GameManager.Instance.playerPosition;
+            }
+            
         }
 
         // UI
