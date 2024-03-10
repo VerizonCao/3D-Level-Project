@@ -31,7 +31,7 @@ public class Scarecrow : MonoBehaviour
         {
 
             // for puzzle
-            if (GameManager.Instance.getCurSeason() == GameManager.Season.Fall)
+            /*if (GameManager.Instance.getCurSeason() == GameManager.Season.Fall)
             {
                 // show ui to interact.
                 if (!puzzleSolved)
@@ -50,9 +50,30 @@ public class Scarecrow : MonoBehaviour
                     }
 
                 }
+            }*/
+            //Puzzle logic 2
+            if (!puzzleSolved)
+            {
+                uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
+                uppertext.enabled = true;
             }
-  
+            if (puzzleSolved)
+            {
+                uppertext.text = "Thank you!";
+                uppertext.enabled = true;
+                if (!photoCollected)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GameManager.Instance.AddItem("Photo1");
+                        photoCollected = true;
+                        GameManager.Instance.PuzzlePhotoActive();
+                    }
 
+                }
+
+            }
+            /*
             if (Input.GetKeyDown(KeyCode.E))
             {
                 // for puzzle
@@ -68,7 +89,7 @@ public class Scarecrow : MonoBehaviour
                     // switch season
                     GameManager.Instance.SwitchSeason(GameManager.Season.Fall);
                 }
-            }
+            }*/
         }
         else
         {

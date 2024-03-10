@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool refuseTeleport = false;
 
+    [Header(" - Puzzle Photo - ")]
+    [SerializeField] private GameObject scarecrowPuzzlePhoto;
+
     private void Awake()
     {
         if (Instance == null)
@@ -41,6 +44,10 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void Start()
+    {
+        scarecrowPuzzlePhoto.SetActive(false);
     }
     public void SwitchSeason(Season newSeason)
     {
@@ -183,5 +190,10 @@ public class GameManager : MonoBehaviour
             // Set the text of the UI element to the last item in the itemList
             itemNameText.text = itemList[itemList.Count - 1];
         }
+    }
+
+    public void PuzzlePhotoActive()
+    {
+        scarecrowPuzzlePhoto.SetActive(true);
     }
 }
