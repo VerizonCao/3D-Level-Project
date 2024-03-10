@@ -55,9 +55,9 @@ public class Swing : MonoBehaviour
         player.switchCamera(true);
         //switch player anim to sit
         // for which reason, bugged, so ignore for now
-        //player.switchToAminNumber(5);
+        player.switchToAminNumber(5);
         GameManager.Instance.playerPosition = player.transform.position;
-        StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 2f));
+        StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
         
     }
 
