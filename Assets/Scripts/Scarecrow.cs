@@ -11,9 +11,13 @@ public class Scarecrow : MonoBehaviour
 
     [SerializeField] Text uppertext;
 
+
     [SerializeField] private PlayerController player;
 
     [SerializeField] private bool isActivated;
+
+    [SerializeField] private bool puzzleSolved = false;
+    private bool photoCollected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +29,29 @@ public class Scarecrow : MonoBehaviour
     {
         if (detectionCircle != null && detectionCircle.isTriggered)
         {
-            // show ui to interact.
-            uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
-            uppertext.enabled = true;
+
+            // for puzzle
+            if (GameManager.Instance.getCurSeason() == GameManager.Season.Fall)
+            {
+                // show ui to interact.
+                if (!puzzleSolved)
+                {
+                    uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
+                    uppertext.enabled = true;
+                }
+                if (puzzleSolved)
+                {
+                    uppertext.text = "Thank you!";
+                    uppertext.enabled = true;
+                    if (!photoCollected)
+                    {
+                        GameManager.Instance.AddItem("Photo1");
+                        photoCollected = true;
+                    }
+
+                }
+            }
+  
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -53,8 +77,9 @@ public class Scarecrow : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void SolvePuzzle()
     {
-        
+        puzzleSolved = true;
     }
+
 }

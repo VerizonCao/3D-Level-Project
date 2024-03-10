@@ -7,6 +7,7 @@ public class InteractItem : MonoBehaviour
     [SerializeField] private GameObject interactUI;
     [SerializeField] private Transform UILocation;
     [SerializeField] private string requiredItemName;
+    [SerializeField] private GameObject puzzleItem;
     public enum ItemType
     {
         ObtainableItem,
@@ -72,7 +73,11 @@ public class InteractItem : MonoBehaviour
                         Destroy(gameObject);
                         break;
                     case ItemType.ConsumeItem:
-                        GameManager.Instance.UseItem(itemName);
+                        if (GameManager.Instance.itemList.Contains(requiredItemName))
+                        {
+                            GameManager.Instance.UseItem(itemName);
+                            puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                        }
                         break;
                     case ItemType.SeasonChangingItem:
                         Season newSeason = ConvertSwitchtoSeason(switchtoSeason);
