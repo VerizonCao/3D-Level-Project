@@ -11,6 +11,8 @@ public class Scarecrow : MonoBehaviour
 
     [SerializeField] Text uppertext;
 
+    [SerializeField] private PlayerController player;
+
     [SerializeField] private bool isActivated;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,22 @@ public class Scarecrow : MonoBehaviour
             uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
             uppertext.enabled = true;
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // for puzzle
+                if (GameManager.Instance.getCurSeason() == GameManager.Season.Fall)
+                {
+
+                }
+                else   // switch season
+                {
+                    // switch to 1D
+                    player.switchCamera(true);
+                    // Anim
+                    // switch season
+                    GameManager.Instance.SwitchSeason(GameManager.Season.Fall);
+                }
+            }
         }
         else
         {

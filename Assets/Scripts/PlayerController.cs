@@ -299,7 +299,8 @@ public class PlayerController : MonoBehaviour {
 
     private bool IsOnGround() {
         float groundDistanceCutoff = 0.05f;
-        return GetDistanceToGround() <= groundDistanceCutoff;
+        float dis2Ground = GetDistanceToGround();
+        return dis2Ground <= groundDistanceCutoff;
     }
 
     private bool CanJump() {
