@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
         jumping = 2,
         pickFruit = 3,
         petAnimal = 4,
+        sitting = 5,
     }
     [SerializeField] playerState currentState = playerState.falling;
     [SerializeField] AnimState animState = AnimState.idle;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Transform phantomCamera;
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private Transform lookAtPoint;
-    [SerializeField] private Transform modelContainer;
+    public Transform modelContainer;
     [Space]
     [SerializeField] LayerMask groundLayers; // just includes the Ground layer
 
@@ -56,8 +57,8 @@ public class PlayerController : MonoBehaviour {
     private Vector2 lookInput;
     private float lookSpeed = 2f;
     private float cameraPitch = 0f;
-    [SerializeField] float firstCameraVerticalMax = 90f;
-    [SerializeField] float firstCameraVerticalMin = -90f;
+    public float firstCameraVerticalMax = 90f;
+    public float firstCameraVerticalMin = -90f;
     [SerializeField] bool useFirstViewCamera = false;
 
     // Input Variables
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour {
 
 
     [Header(" - Debug - ")]
-    [SerializeField] bool stopGravity = false;
+    public bool stopGravity = false;
 
 
     private void Awake() {
@@ -98,6 +99,23 @@ public class PlayerController : MonoBehaviour {
         
     }
 
+    public void switchCamera(bool isFirstView)
+    {
+        useFirstViewCamera = isFirstView;
+        if (useFirstViewCamera)
+        {
+            FirstViewCamera.enabled = true;
+            firstViewAudio.enabled = true;
+            playerCamera.SetActive(false);
+        }
+        else
+        {
+            FirstViewCamera.enabled = false;
+            firstViewAudio.enabled = false;
+            playerCamera.SetActive(true);
+        }
+    }
+
     void Update() {
         // Jump Start Press
         if (PIC.PlayerInput.Jump.WasPressedThisFrame() && CanJump()) {
@@ -113,27 +131,24 @@ public class PlayerController : MonoBehaviour {
         {
             Debug.Log("Switch to camera mode " + (useFirstViewCamera ? "firstVuew" : "thirdView"));
             useFirstViewCamera = !useFirstViewCamera;
-            if (useFirstViewCamera)
-            {
-                FirstViewCamera.enabled = true;
-                firstViewAudio.enabled = true;
-                playerCamera.SetActive(false);
-            }
-            else
-            {
-                FirstViewCamera.enabled = false;
-                firstViewAudio.enabled = false;
-                playerCamera.SetActive(true);
-            }
+            switchCamera(useFirstViewCamera);
         }
 
 
+    }
+
+    public void switchToAminNumber(int number)
+    {
+        animState = (AnimState)number;
+        animator.SetInteger("PlayerState", (int)animState);
     }
 
     private void changePlayerState(playerState state)
     {
         currentState = state;
     }
+
+  
 
     private void FixedUpdate() {
 
@@ -172,7 +187,7 @@ public class PlayerController : MonoBehaviour {
             animState = AnimState.walking;
             animator.SetInteger("PlayerState", (int)animState);
         }
-        else if (dirVector == Vector3.zero && animState != AnimState.jumping)
+        else if (dirVector == Vector3.zero && animState != AnimState.jumping && animState != AnimState.sitting)
         {
             // if the player is not jumping, we play idle anim
             animState = AnimState.idle;

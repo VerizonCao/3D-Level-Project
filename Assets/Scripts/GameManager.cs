@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     }
     [SerializeField] private Season season;
 
-    [SerializeField] private Vector3 playerPosition;
+    public Vector3 playerPosition;
     public List<string> itemList = new List<string>();
 
     [SerializeField] private Canvas targetCanvas;
