@@ -9,9 +9,9 @@ public class Scarecrow : MonoBehaviour
 
     [SerializeField] private DetectionCircle detectionCircle;
 
-    [SerializeField] TextMeshProUGUI uppertext;
-    
+    [SerializeField] Text uppertext;
 
+    [SerializeField] private bool isActivated;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class Scarecrow : MonoBehaviour
         if (detectionCircle != null && detectionCircle.isTriggered)
         {
             // show ui to interact.
-            uppertext.text = "Hi, I am Scarecrow";
+            uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
             uppertext.enabled = true;
 
         }

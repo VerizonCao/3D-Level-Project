@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3510086249011388502}
-  m_Father: {fileID: 345908984621524038}
+  m_Father: {fileID: 3023030917171761604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -167,7 +167,8 @@ Transform:
   m_Children:
   - {fileID: 4685659962276205435}
   - {fileID: 7486891323578937755}
-  - {fileID: 345908984621524038}
+  - {fileID: 3945147511624956894}
+  - {fileID: 8878456049403514750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2360250686172423817
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactUI: {fileID: 2659759341488353227}
-  itemModel: {fileID: 4685659962276205435}
+  itemModel: {fileID: 8878456049403514750}
   itemType: 0
   itemName: Item
   switchtoSeason: 0
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4423925180821701056
+--- !u!1 &3613359534487835701
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,28 +484,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 345908984621524038}
+  - component: {fileID: 8878456049403514750}
   m_Layer: 0
-  m_Name: CanvasPosition
+  m_Name: UI Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &345908984621524038
+--- !u!4 &8878456049403514750
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4423925180821701056}
+  m_GameObject: {fileID: 3613359534487835701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
+  m_LocalPosition: {x: 0, y: 0.347, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3945147511624956894}
+  m_Children: []
   m_Father: {fileID: 3023030917171761604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6793602547969849192

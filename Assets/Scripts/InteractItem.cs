@@ -1,10 +1,12 @@
 using UnityEngine;
 using static GameManager;
+using static InteractItem;
 
 public class InteractItem : MonoBehaviour
 {
     [SerializeField] private GameObject interactUI;
-    [SerializeField] private Transform itemModel;
+    [SerializeField] private Transform UILocation;
+    [SerializeField] private string requiredItemName;
     public enum ItemType
     {
         ObtainableItem,
@@ -43,16 +45,24 @@ public class InteractItem : MonoBehaviour
 
         if (detectionCircle != null && detectionCircle.isTriggered)
         {
-            if (interactUI != null)
+            switch (itemType)
             {
-                interactUI.SetActive(true);
-
-                if (itemModel != null)
-                {
-                    Vector3 screenPos = mainCamera.WorldToScreenPoint(itemModel.position);
-                    interactUI.transform.position = screenPos;
-                }
+                case ItemType.ObtainableItem:
+                    UISetActive();
+                    break;
+                case ItemType.ConsumeItem:
+                    if (GameManager.Instance.itemList.Contains(requiredItemName))
+                    {
+                        UISetActive();
+                    }
+                    break;
+                case ItemType.SeasonChangingItem:
+                    UISetActive();
+                    break;
+                default:
+                    break;
             }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 switch (itemType)
@@ -96,7 +106,20 @@ public class InteractItem : MonoBehaviour
             case SwitchtoSeason.Winter:
                 return Season.Winter;
             default:
-                return Season.Spring; // 或者选择默认值
+                return Season.Spring; 
+        }
+    }
+    private void UISetActive()
+    {
+        if (interactUI != null)
+        {
+            interactUI.SetActive(true);
+
+            if (UILocation != null)
+            {
+                Vector3 screenPos = mainCamera.WorldToScreenPoint(UILocation.position);
+                interactUI.transform.position = screenPos;
+            }
         }
     }
 }
