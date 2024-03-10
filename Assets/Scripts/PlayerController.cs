@@ -291,6 +291,26 @@ public class PlayerController : MonoBehaviour {
 
         RaycastHit hit;
         if (Physics.Raycast(startPosition, Vector3.down, out hit, maxDistance, groundLayers, QueryTriggerInteraction.Ignore)) {
+
+            int groundLayerIndex = LayerMask.NameToLayer("Ground");
+            int roofLayerIndex = LayerMask.NameToLayer("Roof");
+
+            // Check if the hit.collider's gameObject is in the ground layer
+            if (hit.collider.gameObject.layer == groundLayerIndex)
+            {
+                // Do something specific for ground
+            }
+            // Check if the hit.collider's gameObject is in the roof layer
+            else if (hit.collider.gameObject.layer == roofLayerIndex)
+            {
+                // Do something specific for roof
+                // we  -0.2 as the distance to roof
+                float roofDistance = hit.distance;
+                roofDistance = Mathf.Max(0f, roofDistance - 1f);
+                return roofDistance;
+            }
+
+
             return hit.distance;
         }
 

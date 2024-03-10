@@ -155,13 +155,12 @@ MonoBehaviour:
   modelContainer: {fileID: 2948162262233379555}
   groundLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   FirstViewCamera: {fileID: 6109553084849914793}
   firstViewAudio: {fileID: 6422409972639326564}
   firstCameraVerticalMax: 90
   firstCameraVerticalMin: -90
   useFirstViewCamera: 0
-  closeSpeed: 5
   animator: {fileID: 5074520615695266925}
   jumpClip: {fileID: 7400000, guid: c5fe03da176b8014db41fe4b1daebd2a, type: 2}
   stopGravity: 0
