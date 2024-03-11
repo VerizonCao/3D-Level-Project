@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public List<string> itemList = new List<string>();
 
     [SerializeField] private Canvas targetCanvas;
-    [SerializeField] TextMeshProUGUI uppertext;
+    [SerializeField] Text uppertext;
     [SerializeField] private GameObject itemPrefab;
     private Transform itemsParent;
 
