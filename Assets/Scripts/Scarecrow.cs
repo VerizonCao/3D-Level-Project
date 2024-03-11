@@ -14,8 +14,6 @@ public class Scarecrow : MonoBehaviour
 
     [SerializeField] private PlayerController player;
 
-    [SerializeField] private bool isActivated;
-
     [SerializeField] private bool puzzleSolved = false;
     private bool photoCollected = false;
     // Start is called before the first frame update
@@ -63,13 +61,9 @@ public class Scarecrow : MonoBehaviour
                 uppertext.enabled = true;
                 if (!photoCollected)
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        GameManager.Instance.AddItem("Photo1");
-                        photoCollected = true;
-                        GameManager.Instance.PuzzlePhotoActive();
-                    }
-
+                    GameManager.Instance.AddItem("Photo1");
+                    photoCollected = true;
+                    GameManager.Instance.PuzzlePhotoActive();
                 }
 
             }

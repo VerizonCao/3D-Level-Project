@@ -4,10 +4,11 @@ using static InteractItem;
 
 public class InteractItem : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] private GameObject interactUI;
     [SerializeField] private Transform UILocation;
-    [SerializeField] private string requiredItemName;
-    [SerializeField] private GameObject puzzleItem;
+    public DetectionCircle detectionCircle;
+    private Camera mainCamera;
     public enum ItemType
     {
         ObtainableItem,
@@ -16,7 +17,13 @@ public class InteractItem : MonoBehaviour
     }
 
     [SerializeField] private ItemType itemType;
+    [Header("ObtainableItem")]
     public string itemName;
+
+    [Header("ConsumeItem")]
+    [SerializeField] private string requiredItemName;
+    [SerializeField] private GameObject puzzleItem;
+
 
     public enum SwitchtoSeason
     {
@@ -25,11 +32,10 @@ public class InteractItem : MonoBehaviour
         Fall,
         Winter
     }
-
+    [Header("SeasonChangingItem")]
     [SerializeField] private SwitchtoSeason switchtoSeason;
 
-    public DetectionCircle detectionCircle;
-    private Camera mainCamera;
+
 
     private void Update()
     {
@@ -74,10 +80,10 @@ public class InteractItem : MonoBehaviour
                         break;
                     case ItemType.ConsumeItem:
                         if (GameManager.Instance.itemList.Contains(requiredItemName))
-                        {
-                            GameManager.Instance.UseItem(itemName);
+                        {             
                             puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
                         }
+                        GameManager.Instance.UseItem(requiredItemName);
                         break;
                     case ItemType.SeasonChangingItem:
                         Season newSeason = ConvertSwitchtoSeason(switchtoSeason);
