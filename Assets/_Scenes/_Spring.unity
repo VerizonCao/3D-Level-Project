@@ -11237,7 +11237,7 @@ GameObject:
   - component: {fileID: 683417474}
   - component: {fileID: 683417473}
   m_Layer: 0
-  m_Name: Summer
+  m_Name: Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14862,7 +14862,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.18
   jumpHeight: 3
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 683417472}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
