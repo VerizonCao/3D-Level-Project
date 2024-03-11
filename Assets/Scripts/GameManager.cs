@@ -20,16 +20,21 @@ public class GameManager : MonoBehaviour
 
     public Vector3 playerPosition;
     public List<string> itemList = new List<string>();
-
-    [SerializeField] private Canvas targetCanvas;
-    [SerializeField] Text uppertext;
     [SerializeField] private GameObject itemPrefab;
     private Transform itemsParent;
 
     [SerializeField] bool refuseTeleport = false;
+    [SerializeField] bool playerEntered = false;
+
+    [Header("UI")]
+    [SerializeField] private Canvas targetCanvas;
+    [SerializeField] Text uppertext;
 
     [Header(" - Puzzle Photo - ")]
     [SerializeField] private GameObject scarecrowPuzzlePhoto;
+    [SerializeField] private GameObject snowmanPuzzlePhoto;
+    [SerializeField] private GameObject birdPuzzlePhoto;
+    [SerializeField] private GameObject picnicPuzzlePhoto;
 
     private void Awake()
     {
@@ -48,6 +53,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         scarecrowPuzzlePhoto.SetActive(false);
+        snowmanPuzzlePhoto.SetActive(false);
+        birdPuzzlePhoto.SetActive(false);
+        picnicPuzzlePhoto.SetActive(false);
     }
     public void SwitchSeason(Season newSeason)
     {
@@ -117,6 +125,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (!playerEntered)
+        {
+            uppertext.enabled = false;
+        }
         if (Input.GetKeyDown(KeyCode.Z))
         {
             PlayerController player = FindObjectOfType<PlayerController>();
@@ -192,8 +204,89 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PuzzlePhotoActive()
+    public void PuzzlePhotoActive(string photoName)
     {
-        scarecrowPuzzlePhoto.SetActive(true);
+        if (photoName != null)
+        {
+
+            switch (photoName)
+            {
+                case "scarecrow":
+                    scarecrowPuzzlePhoto.SetActive(true);
+                    break;
+                case "snowman":
+                    snowmanPuzzlePhoto.SetActive(true);
+                    break;
+                case "bird":
+                    birdPuzzlePhoto.SetActive(true);
+                    break;
+                case "picnic":
+                    picnicPuzzlePhoto.SetActive(true);
+                    break;
+                default:
+                    Debug.LogError("Invalid photoName specified.");
+                    break;
+            }          
+        }
+    }
+
+    public void Dialog(string dialogName)
+    {
+        if (playerEntered && dialogName != null)
+        {
+            switch(dialogName)
+            {
+                case ("scarecrowNotSolved"):
+                    uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
+                    uppertext.enabled = true;
+                    break;
+                case ("scarecrowSolved"):
+                    uppertext.text = "Thank you!";
+                    uppertext.enabled = true;
+                    break;
+                case ("snowmanNotSolved"):
+                    uppertext.text = "Hi, I am Snowman, can you bring me a carrot?";
+                    uppertext.enabled = true;
+                    break;
+                case ("snowmanSolved"):
+                    uppertext.text = "Thank you!";
+                    uppertext.enabled = true;
+                    break;
+                case ("birdNotSolved"):
+                    uppertext.text = "Hi, I am bird, can you bring me corn?";
+                    uppertext.enabled = true;
+                    break;
+                case ("birdSolved"):
+                    uppertext.text = "Thank you!";
+                    uppertext.enabled = true;
+                    break;
+                case ("picnicNotSolved"):
+                    uppertext.text = "Hi, I am picnic, can you bring me ice?";
+                    uppertext.enabled = true;
+                    break;
+                case ("picnicSolved"):
+                    uppertext.text = "Thank you!";
+                    uppertext.enabled = true;
+                    break;
+                case ("riverNotSolved"):
+                    uppertext.text = "You need winter boots to pass through the river";
+                    uppertext.enabled = true;
+                    break;
+                case ("riverSolved"):
+                    uppertext.text = "You can pass through now!";
+                    uppertext.enabled = true;
+                    break;
+            }
+        }
+    }
+
+    public void PlayerEnter()
+    {
+        playerEntered = true;
+    }
+
+    public void PlayerLeave()
+    {
+        playerEntered = false;
     }
 }

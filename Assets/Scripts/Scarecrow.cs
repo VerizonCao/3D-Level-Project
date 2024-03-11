@@ -9,9 +9,6 @@ public class Scarecrow : MonoBehaviour
 
     [SerializeField] private DetectionCircle detectionCircle;
 
-    [SerializeField] Text uppertext;
-
-
     [SerializeField] private PlayerController player;
 
     [SerializeField] private bool puzzleSolved = false;
@@ -19,7 +16,6 @@ public class Scarecrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,6 +25,23 @@ public class Scarecrow : MonoBehaviour
         {
 
             // for puzzle
+            //Puzzle logic 2
+            if (!puzzleSolved)
+            {
+                GameManager.Instance.Dialog("scarecrowNotSolved");
+            }
+            if (puzzleSolved)
+            {
+                GameManager.Instance.Dialog("scarecrowSolved");
+
+                if (!photoCollected)
+                {
+                    GameManager.Instance.AddItem("Photo1");
+                    photoCollected = true;
+                    GameManager.Instance.PuzzlePhotoActive("scarecrow");
+                }
+
+            }
             /*if (GameManager.Instance.getCurSeason() == GameManager.Season.Fall)
             {
                 // show ui to interact.
@@ -48,26 +61,7 @@ public class Scarecrow : MonoBehaviour
                     }
 
                 }
-            }*/
-            //Puzzle logic 2
-            if (!puzzleSolved)
-            {
-                uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
-                uppertext.enabled = true;
             }
-            if (puzzleSolved)
-            {
-                uppertext.text = "Thank you!";
-                uppertext.enabled = true;
-                if (!photoCollected)
-                {
-                    GameManager.Instance.AddItem("Photo1");
-                    photoCollected = true;
-                    GameManager.Instance.PuzzlePhotoActive();
-                }
-
-            }
-            /*
             if (Input.GetKeyDown(KeyCode.E))
             {
                 // for puzzle
@@ -84,10 +78,6 @@ public class Scarecrow : MonoBehaviour
                     GameManager.Instance.SwitchSeason(GameManager.Season.Fall);
                 }
             }*/
-        }
-        else
-        {
-            uppertext.enabled = false;
         }
     }
 

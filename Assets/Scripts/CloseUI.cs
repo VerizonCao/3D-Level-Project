@@ -19,5 +19,6 @@ public class CloseUI : MonoBehaviour
     public void DisactiveUI()
     {
         puzzleUI.SetActive(false);
+        print("closeUI");
     }
 }

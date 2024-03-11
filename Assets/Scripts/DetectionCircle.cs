@@ -26,6 +26,7 @@ public class DetectionCircle : MonoBehaviour
         {
             Debug.Log("here triggered");
             isTriggered = true;
+            GameManager.Instance.PlayerEnter();
         }
     }
 
@@ -36,6 +37,7 @@ public class DetectionCircle : MonoBehaviour
         {
             Debug.Log("here leave trigger");
             isTriggered = false;
+            GameManager.Instance.PlayerLeave();
         }
     }
 }

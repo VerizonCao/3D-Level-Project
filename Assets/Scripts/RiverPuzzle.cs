@@ -7,17 +7,8 @@ public class RiverPuzzle : MonoBehaviour
 {
     [SerializeField] private DetectionCircle detectionCircle;
 
-    [SerializeField] Text uppertext;
-
     [SerializeField] private bool puzzleSolved = false;
 
-    //[SerializeField] GameObject RiverWallToDestroy;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,27 +18,20 @@ public class RiverPuzzle : MonoBehaviour
             //Puzzle logic 2
             if (!puzzleSolved)
             {
-                uppertext.text = "You need winter boots to path through the river";
-                uppertext.enabled = true;
+                GameManager.Instance.Dialog("riverNotSolved");
             }
             if (puzzleSolved)
             {
-                uppertext.text = "You wear on the boots, you can go through the river now!";
-                uppertext.enabled = true;
+                GameManager.Instance.Dialog("riverSolved");
                 StartCoroutine(DestroyItem());
                 return;
             }
 
         }
-        else
-        {
-            uppertext.enabled = false;
-        }
     }
     private IEnumerator DestroyItem()
     {
         yield return new WaitForSeconds(2);
-        uppertext.enabled = false;
         Destroy(gameObject);
     }
 
@@ -55,8 +39,5 @@ public class RiverPuzzle : MonoBehaviour
     {
         puzzleSolved = true;
     }
-    private void OnDestroy()
-    {
-        
-    }
+
 }
