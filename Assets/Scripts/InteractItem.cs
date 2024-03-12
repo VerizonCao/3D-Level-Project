@@ -95,15 +95,17 @@ public class InteractItem : MonoBehaviour
                                 if(GameManager.Instance.getCurSeason() == Season.Winter)
                                 {
                                     puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                                    GameManager.Instance.UseItem(requiredItemName);
                                 }
                             }
                             else
                             {
                                 puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                                GameManager.Instance.UseItem(requiredItemName);
                             }
                             
                         }
-                        GameManager.Instance.UseItem(requiredItemName);
+                        
                         break;
                     case ItemType.SeasonChangingItem:
                         Season newSeason = ConvertSwitchtoSeason(switchtoSeason);
