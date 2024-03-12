@@ -49,7 +49,7 @@ public class Swing : MonoBehaviour
         player.transform.SetParent(transform);
         player.stopGravity = true;
         player.transform.localPosition = playerSitPosition.localPosition;
-        player.modelContainer.transform.localRotation = playerSitPosition.localRotation;
+        player.transform.localRotation = playerSitPosition.localRotation;
 
         player.firstCameraVerticalMax = 20;
         player.switchCamera(true);
@@ -57,7 +57,7 @@ public class Swing : MonoBehaviour
         // for which reason, bugged, so ignore for now
         player.switchToAminNumber(5);
         GameManager.Instance.playerPosition = player.transform.position;
-        StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
+        //StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
         
     }
 

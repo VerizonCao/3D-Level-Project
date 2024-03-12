@@ -36,8 +36,6 @@ public class CameraTarget : MonoBehaviour {
             movementInput.y * movementSpeed.y * axisInversion.y * Time.deltaTime
         );
 
-        Debug.Log("camera speed, x: " + movementInput.x + " y : " + movementInput.y);
-
         // Clamps and Loops
         if (spherePosition.x > 180) //spherePosition += Vector2.right * -360;
             spherePosition = new Vector2(spherePosition.x - 360, spherePosition.y);

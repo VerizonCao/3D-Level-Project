@@ -62,19 +62,19 @@ public class GameManager : MonoBehaviour
         switch (newSeason)
         {
             case Season.Spring:
-                SceneManager.LoadScene("SpringScene");
+                SceneManager.LoadScene("_Spring");
                 season = Season.Spring;
                 break;
             case Season.Summer:
-                SceneManager.LoadScene("SummerScene");
+                SceneManager.LoadScene("_Summer");
                 season = Season.Summer;
                 break;
             case Season.Fall:
-                SceneManager.LoadScene("FallScene");
+                SceneManager.LoadScene("_Fall");
                 season = Season.Fall;
                 break;
             case Season.Winter:
-                SceneManager.LoadScene("WinterScene");
+                SceneManager.LoadScene("_Winter");
                 season = Season.Winter;
                 break;
             default:
