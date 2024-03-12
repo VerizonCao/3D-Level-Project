@@ -41,6 +41,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7428324453545996003}
     m_Modifications:
+    - target: {fileID: 2652871533264369023, guid: d9e3d65e60da56445bdbdd23ac1af2a3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3980972801008415894, guid: d9e3d65e60da56445bdbdd23ac1af2a3, type: 3}
       propertyPath: m_Name
       value: RiverInvisibleWall

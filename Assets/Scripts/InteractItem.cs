@@ -89,7 +89,19 @@ public class InteractItem : MonoBehaviour
                     case ItemType.ConsumeItem:
                         if (GameManager.Instance.itemList.Contains(requiredItemName))
                         {             
-                            puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                            if (requiredItemName == "Boots")
+                            {
+                                //check winter only
+                                if(GameManager.Instance.getCurSeason() == Season.Winter)
+                                {
+                                    puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                                }
+                            }
+                            else
+                            {
+                                puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                            }
+                            
                         }
                         GameManager.Instance.UseItem(requiredItemName);
                         break;
