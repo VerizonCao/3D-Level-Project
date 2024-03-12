@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Canvas targetCanvas;
-    [SerializeField] Text uppertext;
+    [SerializeField] public Text uppertext;
+    [SerializeField] public Text door;
 
     [Header(" - Puzzle Photo - ")]
     [SerializeField] private GameObject scarecrowPuzzlePhoto;
