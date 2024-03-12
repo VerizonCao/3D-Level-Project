@@ -34,6 +34,7 @@ public class SummerPoint : MonoBehaviour
                 //move to 1st Camera
                 player.switchCamera(true);
 
+                GameManager.Instance.playerPosition = player.transform.position;
                 // switch to winter
                 // still use spring as we 
                 StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Summer), 5f));

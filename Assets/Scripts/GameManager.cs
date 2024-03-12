@@ -90,14 +90,14 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!uppertext)
-        {
-            uppertext = GameObject.FindWithTag("UpperText").GetComponent<Text>();
-        }
-        if (!targetCanvas)
-        {
-            targetCanvas = GameObject.FindWithTag("MainUI").GetComponent<Canvas>();
-        }
+        //if (!uppertext)
+        //{
+        //    uppertext = GameObject.FindWithTag("UpperText").GetComponent<Text>();
+        //}
+        //if (!targetCanvas)
+        //{
+        //    targetCanvas = GameObject.FindWithTag("MainUI").GetComponent<Canvas>();
+        //}
 
         PlayerController player = FindObjectOfType<PlayerController>();
         if (player != null)

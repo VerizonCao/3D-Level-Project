@@ -331,7 +331,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     private bool IsOnGround() {
-        float groundDistanceCutoff = 0.05f;
+        //float groundDistanceCutoff = 0.05f;
+        float groundDistanceCutoff = 0.3f;
         float dis2Ground = GetDistanceToGround();
         return dis2Ground <= groundDistanceCutoff;
     }

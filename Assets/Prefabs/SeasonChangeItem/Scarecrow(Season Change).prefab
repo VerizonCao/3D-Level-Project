@@ -232,12 +232,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1664062489748430463}
   UILocation: {fileID: 1237584398095781654}
-  requiredItemName: 
-  puzzleItem: {fileID: 2932859780290504239}
+  detectionCircle: {fileID: 5839020915599419159}
   itemType: 2
   itemName: 
-  switchtoSeason: 0
-  detectionCircle: {fileID: 5839020915599419159}
+  requiredItemName: 
+  puzzleItem: {fileID: 2932859780290504239}
+  switchtoSeason: 2
 --- !u!1 &4651524895111682531
 GameObject:
   m_ObjectHideFlags: 0
