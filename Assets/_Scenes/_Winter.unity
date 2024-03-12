@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42224, g: 0.6431838, b: 0.79369, a: 1}
+  m_IndirectSpecularColor: {r: 0.42221254, g: 0.64316183, b: 0.793691, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20799,87 +20799,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387034840}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1399652132
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1664827126076942934, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 1664827126076942934, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591905985929854101, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591905985929854101, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591905985929854101, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 67.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.003111
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 55.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.98950607
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.14449129
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -376.616
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447647980324204773, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4213823329229526804, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: m_Name
-      value: Scarecrow(Season Change) (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547219553742717640, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
-      propertyPath: switchtoSeason
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
 --- !u!1001 &1404911485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33539,5 +33458,4 @@ SceneRoots:
   - {fileID: 1172479323}
   - {fileID: 52346932}
   - {fileID: 2112557466}
-  - {fileID: 1399652132}
   - {fileID: 430916626}
