@@ -11,9 +11,16 @@ public class Snowman : MonoBehaviour
 
     [SerializeField] private bool puzzleSolved = false;
     private bool photoCollected = false;
+
+    [Header("-----Snowman 2 models-----")]
+    [SerializeField] private GameObject snowmanWithoutNose;
+    [SerializeField] private GameObject snowmanWithNose;
+
     // Start is called before the first frame update
     private void Start()
     {
+        snowmanWithNose.SetActive(false);
+        snowmanWithoutNose.SetActive(true);
     }
     // Update is called once per frame
     void Update()
@@ -28,6 +35,8 @@ public class Snowman : MonoBehaviour
             }
             if (puzzleSolved)
             {
+                snowmanWithNose.SetActive(true);
+                snowmanWithoutNose.SetActive(false);
                 GameManager.Instance.Dialog("snowmanSolved");
                 if (!photoCollected)
                 {

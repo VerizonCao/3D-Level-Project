@@ -41,6 +41,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8533345985719542875}
     m_Modifications:
+    - target: {fileID: 2720717377141410445, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
+      propertyPath: snowmanWithNose
+      value: 
+      objectReference: {fileID: 449321497631505718}
+    - target: {fileID: 2720717377141410445, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
+      propertyPath: snowmanWithoutNose
+      value: 
+      objectReference: {fileID: 4444105639911600735}
     - target: {fileID: 7971109369019419341, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
       propertyPath: m_Name
       value: Snowman
@@ -90,9 +98,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
+--- !u!1 &449321497631505718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6453905398269553381, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
+  m_PrefabInstance: {fileID: 6894077846752368595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2705365536583180082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8802229230274300129, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
+  m_PrefabInstance: {fileID: 6894077846752368595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4444105639911600735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7061659398135686540, guid: 6f3b82f2251a35148a6fd0dacf73a7c7, type: 3}
   m_PrefabInstance: {fileID: 6894077846752368595}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7349163189001425186
