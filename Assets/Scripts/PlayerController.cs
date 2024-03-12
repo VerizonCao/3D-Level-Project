@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float maxMomentum = 12;
     [SerializeField] private float groundAcceleration = 1;
     [SerializeField] private float gravityStrength = 32;
-    [SerializeField] private float maxJumpForce = 250;
+    [SerializeField] private float onRoofGravityStrength = 15;
+    bool onRoof = false;
+    [SerializeField] private float maxJumpForce = 150;
+    [SerializeField] private float maxJumpForceOnRoof = 100;
     [SerializeField][Range(0f, 1f)] private float groundFriction = 0.97f;
     [SerializeField][Range(0f, 1f)] private float airFriction = 0.95f;
 
@@ -242,7 +245,15 @@ public class PlayerController : MonoBehaviour {
         // Applying Gravity
         if (!stopGravity)
         {
-            rb.AddForce(Vector3.down * gravityStrength, ForceMode.Force);
+            if (onRoof)
+            {
+                rb.AddForce(Vector3.down * onRoofGravityStrength, ForceMode.Force);
+            }
+            else
+            {
+                rb.AddForce(Vector3.down * gravityStrength, ForceMode.Force);
+            }
+            
         }
         
 
@@ -299,10 +310,12 @@ public class PlayerController : MonoBehaviour {
             if (hit.collider.gameObject.layer == groundLayerIndex)
             {
                 // Do something specific for ground
+                onRoof = false;
             }
             // Check if the hit.collider's gameObject is in the roof layer
             else if (hit.collider.gameObject.layer == roofLayerIndex)
             {
+                onRoof = true;
                 // Do something specific for roof
                 // we  -0.2 as the distance to roof
                 float roofDistance = hit.distance;
@@ -338,7 +351,15 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(0.4f);
         changePlayerState(playerState.jumping);
         jumpHold = true;
-        jumpForce = maxJumpForce;
+        if (onRoof)
+        {
+            jumpForce = maxJumpForceOnRoof;
+        }
+        else
+        {
+            jumpForce = maxJumpForce;
+        }
+        
     }
 
     private IEnumerator JumpDuration()
@@ -347,7 +368,7 @@ public class PlayerController : MonoBehaviour {
         animState = AnimState.jumping;
 
         animator.SetInteger("PlayerState", (int)animState);
-        yield return new WaitForSeconds(jumpClip.length / 1.6f);  //1.2f is hardcoded now. 
+        yield return new WaitForSeconds(jumpClip.length / 2.2f);  //1.2f is hardcoded now. 
 
         animState = AnimState.idle;
         animator.SetInteger("PlayerState", (int)animState);

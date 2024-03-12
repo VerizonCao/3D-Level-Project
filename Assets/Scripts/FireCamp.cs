@@ -37,7 +37,7 @@ public class FireCamp : MonoBehaviour
 
                 // switch to winter
                 // still use spring as we 
-                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
+                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Winter), 5f));
             }
 
             prompt.enabled = true;

@@ -91,7 +91,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2948162262233379555}
@@ -144,7 +144,9 @@ MonoBehaviour:
   maxMomentum: 12
   groundAcceleration: 1
   gravityStrength: 32
-  maxJumpForce: 250
+  onRoofGravityStrength: 15
+  maxJumpForce: 150
+  maxJumpForceOnRoof: 100
   groundFriction: 0.97
   airFriction: 0.95
   playerCameraPrefab: {fileID: 126203276287791749, guid: 18af0f5c6ad7e214e971916e8910518e, type: 3}

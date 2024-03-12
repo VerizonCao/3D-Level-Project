@@ -36,7 +36,7 @@ public class SummerPoint : MonoBehaviour
 
                 // switch to winter
                 // still use spring as we 
-                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
+                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Summer), 5f));
             }
         }
     }
