@@ -11,7 +11,6 @@ public class BillboaredToCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("here");
         if (cameraToFace == null)
         {
             try

@@ -50,7 +50,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 6450667720065753101, guid: 1168f1ae2f97b354684d0d61dfba75d8, type: 3}
   refuseTeleport: 0
   playerEntered: 0
-  targetCanvas: {fileID: 0}
+  targetCanvas: {fileID: 5991826908776815804, guid: e5f656ba8476ec74cb6c67d4cc0ffd4c, type: 3}
   uppertext: {fileID: 0}
   scarecrowPuzzlePhoto: {fileID: 0}
   snowmanPuzzlePhoto: {fileID: 0}
