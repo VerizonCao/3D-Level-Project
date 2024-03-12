@@ -10,7 +10,7 @@ public class CameraTarget : MonoBehaviour {
 
     PlayerControls PIC;
     Vector2 movementInput;
-    Vector2 movementSpeed = new Vector2(100f, 30f);
+    Vector2 movementSpeed = new Vector2(120f, 36f);
 
     [Header(" - Debug Info - ")]
     [SerializeField] private Vector2 spherePosition = new Vector2(-90, 26.25f);
@@ -35,6 +35,8 @@ public class CameraTarget : MonoBehaviour {
             movementInput.x * movementSpeed.x * axisInversion.x * Time.deltaTime,
             movementInput.y * movementSpeed.y * axisInversion.y * Time.deltaTime
         );
+
+        Debug.Log("camera speed, x: " + movementInput.x + " y : " + movementInput.y);
 
         // Clamps and Loops
         if (spherePosition.x > 180) //spherePosition += Vector2.right * -360;

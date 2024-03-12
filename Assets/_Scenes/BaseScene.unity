@@ -31330,10 +31330,15 @@ MonoBehaviour:
   season: 0
   playerPosition: {x: -50, y: 10, z: -50}
   itemList: []
-  targetCanvas: {fileID: 1101879073}
-  uppertext: {fileID: 0}
   itemPrefab: {fileID: 6450667720065753101, guid: 1168f1ae2f97b354684d0d61dfba75d8, type: 3}
   refuseTeleport: 0
+  playerEntered: 0
+  targetCanvas: {fileID: 1101879073}
+  uppertext: {fileID: 1490927755}
+  scarecrowPuzzlePhoto: {fileID: 0}
+  snowmanPuzzlePhoto: {fileID: 0}
+  birdPuzzlePhoto: {fileID: 0}
+  picnicPuzzlePhoto: {fileID: 0}
 --- !u!850595691 &1532040827
 LightingSettings:
   m_ObjectHideFlags: 0
