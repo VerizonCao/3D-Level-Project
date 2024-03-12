@@ -191,16 +191,26 @@ public class GameManager : MonoBehaviour
             StartCoroutine(DisableUpperText());
             return;
         }
-        itemList.Remove(useItem);
-        Debug.Log(useItem + " used.");
-
-        // Find the item object in the scene
-        GameObject itemObject = GameObject.Find(useItem);
-
-        if (itemObject != null)
+        if (useItem == "Boots")
         {
-            itemObject.SendMessage("SetQuantity", 0, SendMessageOptions.RequireReceiver);
+
         }
+        else
+        {
+            itemList.Remove(useItem);
+            Debug.Log(useItem + " used.");
+
+            // Find the item object in the scene
+            GameObject itemObject = GameObject.Find(useItem);
+
+            if (itemObject != null)
+            {
+                itemObject.SendMessage("SetQuantity", 0, SendMessageOptions.RequireReceiver);
+            }
+        }
+        
+
+        
     }
 
     private IEnumerator DisableUpperText()
