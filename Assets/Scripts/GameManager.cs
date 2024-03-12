@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject birdPuzzlePhoto;
     [SerializeField] private GameObject picnicPuzzlePhoto;
 
+    public bool pickedCarrot = false;
+    public bool pickedBoots = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -108,6 +111,22 @@ public class GameManager : MonoBehaviour
             }
             
         }
+
+        if(pickedCarrot)
+        {
+            //remove carrot
+            GameObject carrot = GameObject.FindWithTag("Carrot");
+            Destroy(carrot);
+        }
+
+        if (pickedBoots)
+        {
+            //remove boots
+            GameObject boots = GameObject.FindWithTag("Boots");
+            Destroy(boots);
+        }
+
+
 
         // UI
         if (targetCanvas != null)
@@ -203,6 +222,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool checkIfItemAlreadyCollected(string name)
+    {
+        for(int i = 0; i < itemList.Count; i++)
+        {
+            if (itemList[i] == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void PuzzlePhotoActive(string photoName)
     {
         if (photoName != null)
@@ -268,7 +299,14 @@ public class GameManager : MonoBehaviour
                     uppertext.enabled = true;
                     break;
                 case ("riverNotSolved"):
-                    uppertext.text = "You need winter boots to pass through the river";
+                    if (season == Season.Winter)
+                    {
+                        uppertext.text = "You need winter boots to pass through the river";
+                    }
+                    else
+                    {
+                        uppertext.text = "The water is too deep !";
+                    }
                     uppertext.enabled = true;
                     break;
                 case ("riverSolved"):

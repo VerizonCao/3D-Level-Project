@@ -76,6 +76,14 @@ public class InteractItem : MonoBehaviour
                 {
                     case ItemType.ObtainableItem:
                         GameManager.Instance.AddItem(itemName);
+                        if(itemName == "Carrot")
+                        {
+                            GameManager.Instance.pickedCarrot = true;
+                        }
+                        else if(itemName == "Boots")
+                        {
+                            GameManager.Instance.pickedBoots = true;
+                        }
                         Destroy(gameObject);
                         break;
                     case ItemType.ConsumeItem:

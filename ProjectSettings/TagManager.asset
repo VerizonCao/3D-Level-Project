@@ -6,6 +6,8 @@ TagManager:
   tags:
   - UpperText
   - MainUI
+  - Boots
+  - Carrot
   layers:
   - Default
   - TransparentFX
