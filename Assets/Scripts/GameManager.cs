@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
             {
                 if (itemList.Count > 0)
                 {
-                    CreateItemUI();
+                    //CreateItemUI();
                 }
             }
             else
