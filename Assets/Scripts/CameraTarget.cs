@@ -10,7 +10,7 @@ public class CameraTarget : MonoBehaviour {
 
     PlayerControls PIC;
     Vector2 movementInput;
-    Vector2 movementSpeed = new Vector2(120f, 36f);
+    Vector2 movementSpeed = new Vector2(20f, 6f);
 
     [Header(" - Debug Info - ")]
     [SerializeField] private Vector2 spherePosition = new Vector2(-90, 26.25f);
