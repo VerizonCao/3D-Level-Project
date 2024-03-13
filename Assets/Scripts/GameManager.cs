@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Text uppertext;
     [SerializeField] public Text door;
     [SerializeField] public Text playerSpeaking;
+    [SerializeField] public Text warning;
 
     [Header(" - Puzzle Photo - ")]
     [SerializeField] private GameObject scarecrowPuzzlePhoto;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         birdPuzzlePhoto.SetActive(false);
         picnicPuzzlePhoto.SetActive(false);
         playerSpeaking.enabled = false;
+        warning.enabled = false;
     }
     public void SwitchSeason(Season newSeason)
     {

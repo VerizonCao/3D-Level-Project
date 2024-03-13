@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4143324763459181809}
-  - component: {fileID: 772984554421416809}
+  - component: {fileID: 4109378668783254901}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5519388998679968570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &772984554421416809
+--- !u!114 &4109378668783254901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,16 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e183e90dbfc3f94a94b8fe3dfa106e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
-  playerPosition: {x: -50, y: 10, z: -50}
+  season: 2
+  playerPosition: {x: 49.698143, y: 3.0031118, z: 62.477505}
   itemList: []
   itemPrefab: {fileID: 6450667720065753101, guid: 1168f1ae2f97b354684d0d61dfba75d8, type: 3}
   refuseTeleport: 0
   playerEntered: 0
-  targetCanvas: {fileID: 4563279465575924910}
+  targetCanvas: {fileID: 8131966719697133604, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
   uppertext: {fileID: 2807173385349310015}
   door: {fileID: 3832173049227656932}
   playerSpeaking: {fileID: 3997172385177045055}
+  warning: {fileID: 1333536179541288183}
   scarecrowPuzzlePhoto: {fileID: 9221982986705645949}
   snowmanPuzzlePhoto: {fileID: 438812007945788992}
   birdPuzzlePhoto: {fileID: 4459224640601290262}
@@ -179,6 +180,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5303116005263588042, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
   m_PrefabInstance: {fileID: 5732672047291851914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1333536179541288183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6705621034840932477, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+  m_PrefabInstance: {fileID: 5732672047291851914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2807173385349310015 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7600844204864520885, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
@@ -215,11 +227,6 @@ MonoBehaviour:
 --- !u!1 &4459224640601290262 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8245198070855307932, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
-  m_PrefabInstance: {fileID: 5732672047291851914}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &4563279465575924910 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8131966719697133604, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
   m_PrefabInstance: {fileID: 5732672047291851914}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &5519388998679968570 stripped

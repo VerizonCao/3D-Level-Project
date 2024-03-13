@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour {
     public float firstCameraVerticalMax = 90f;
     public float firstCameraVerticalMin = -90f;
     [SerializeField] bool useFirstViewCamera = false;
+    public bool lockFirstCamera = false;
 
     // Input Variables
     PlayerControls PIC;
@@ -116,6 +117,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
+            // rotate the player to 0,0,0
+            transform.rotation = Quaternion.identity;
             FirstViewCamera.enabled = false;
             firstViewAudio.enabled = false;
             playerCamera.SetActive(true);
@@ -160,6 +163,10 @@ public class PlayerController : MonoBehaviour {
 
         if (useFirstViewCamera)
         {
+            if (lockFirstCamera)
+            {
+                return;
+            }
             // Horizontal rotation
             transform.Rotate(Vector3.up * lookInput.x * lookSpeed);
 

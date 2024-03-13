@@ -29,10 +29,11 @@ public class Ladder : MonoBehaviour
             // player enter the 1st camera and switch scene
             if (Input.GetKeyDown(KeyCode.E))
             {
+                player.lockFirstCamera = true;
                 // switch to 1d camera
                 player.switchCamera(true);
                 // climb to the roof
-                player.transform.localPosition = ladderStart.position;
+                player.transform.position = ladderStart.position;
                 isMoving = true;
                 //return to 3d
             }
@@ -47,12 +48,13 @@ public class Ladder : MonoBehaviour
         if (isMoving)
         {
             float speed = 2f;  //hardcode for now
-            player.transform.localPosition = Vector3.MoveTowards(player.transform.localPosition, ladderEnd.position, Time.deltaTime * speed);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, ladderEnd.position, Time.deltaTime * speed);
             if (Vector3.Distance(player.transform.position, ladderEnd.position) < 1f)
             {
                 // we now arrive
                 isMoving = false;
                 player.switchCamera(false);
+                player.lockFirstCamera = false;
             }
         }
     }
