@@ -144,11 +144,13 @@ MonoBehaviour:
   maxMomentum: 12
   groundAcceleration: 1
   gravityStrength: 32
-  onRoofGravityStrength: 15
+  onRoofGravityStrength: 32
   maxJumpForce: 150
-  maxJumpForceOnRoof: 100
+  maxJumpForceOnRoof: 170
   groundFriction: 0.97
   airFriction: 0.95
+  groundFrictionOnRoof: 0.8
+  airFrictionOnRoof: 0.8
   playerCameraPrefab: {fileID: 126203276287791749, guid: 18af0f5c6ad7e214e971916e8910518e, type: 3}
   rb: {fileID: 7927374658646423780}
   phantomCamera: {fileID: 0}

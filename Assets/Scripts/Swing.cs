@@ -58,7 +58,17 @@ public class Swing : MonoBehaviour
         // for which reason, bugged, so ignore for now
         player.switchToAminNumber(5);
         GameManager.Instance.playerPosition = player.transform.position;
-        StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Spring), 5f));
+
+
+        GameManager.Instance.playerSpeaking.text = "I can sit here for the whole day";
+        GameManager.Instance.playerSpeaking.enabled = true;
+
+
+        StartCoroutine(WaitAndExecute(() =>
+        {
+            GameManager.Instance.playerSpeaking.enabled = false;
+            GameManager.Instance.SwitchSeason(GameManager.Season.Spring);
+        }, 5f));
 
     }
 

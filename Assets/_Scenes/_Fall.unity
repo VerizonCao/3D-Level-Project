@@ -16726,6 +16726,14 @@ PrefabInstance:
       propertyPath: groundFriction
       value: 0.98
       objectReference: {fileID: 0}
+    - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
+      propertyPath: airFrictionOnRoof
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
+      propertyPath: groundFrictionOnRoof
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7074617436918061651, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49.698143
@@ -27969,6 +27977,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -1452343357121901386, guid: ed920bad5318ee347ad3e34dd82e273f, type: 3}
+    - target: {fileID: 2143407771234974037, guid: f16f39bd1be9d4140ad0cd32366b3c89, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2145725720750969674, guid: f16f39bd1be9d4140ad0cd32366b3c89, type: 3}
       propertyPath: m_Mesh
       value: 

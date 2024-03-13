@@ -35,9 +35,18 @@ public class SummerPoint : MonoBehaviour
                 player.switchCamera(true);
 
                 GameManager.Instance.playerPosition = player.transform.position;
-                // switch to winter
-                // still use spring as we 
-                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Summer), 5f));
+
+
+                GameManager.Instance.playerSpeaking.text = "Remember I used to do this a lot in summer night";
+                GameManager.Instance.playerSpeaking.enabled = true;
+
+
+                StartCoroutine(WaitAndExecute(() =>
+                {
+                    GameManager.Instance.playerSpeaking.enabled = false;
+                    GameManager.Instance.SwitchSeason(GameManager.Season.Summer);
+                }, 5f));
+
             }
         }
     }

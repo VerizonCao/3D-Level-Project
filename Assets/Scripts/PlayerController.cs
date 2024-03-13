@@ -29,12 +29,15 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float maxMomentum = 12;
     [SerializeField] private float groundAcceleration = 1;
     [SerializeField] private float gravityStrength = 32;
-    [SerializeField] private float onRoofGravityStrength = 15;
+    [SerializeField] private float onRoofGravityStrength = 32;
     bool onRoof = false;
     [SerializeField] private float maxJumpForce = 150;
-    [SerializeField] private float maxJumpForceOnRoof = 100;
+    [SerializeField] private float maxJumpForceOnRoof = 170;
     [SerializeField][Range(0f, 1f)] private float groundFriction = 0.98f;
     [SerializeField][Range(0f, 1f)] private float airFriction = 0.95f;
+
+    [SerializeField][Range(0f, 1f)] private float groundFrictionOnRoof = 0.8f;
+    [SerializeField][Range(0f, 1f)] private float airFrictionOnRoof = 0.8f;
 
 
     [Header(" - References - ")]
@@ -277,14 +280,30 @@ public class PlayerController : MonoBehaviour {
         // ----- Applying Friction Forces
         // Ground Friction
         if (currentState == playerState.grounded) {
-            rb.velocity *= groundFriction;
+            if (onRoof)
+            {
+                rb.velocity *= groundFrictionOnRoof;
+            }
+            else
+            {
+                rb.velocity *= groundFriction;
+            }
+            
         }
         // Air Friction
         else { // Only applying air friction to lateral velocity (not up or down, on the XZ plane instead)
             Vector3 lateralVelocity = Vector3.ProjectOnPlane(rb.velocity, transform.up);
             Vector3 verticalVelocity = rb.velocity - lateralVelocity;
 
-            lateralVelocity *= airFriction;
+            if (onRoof)
+            {
+                lateralVelocity *= airFrictionOnRoof;
+            }
+            else
+            {
+                lateralVelocity *= airFriction;
+            }
+            
             rb.velocity = lateralVelocity + verticalVelocity;
         }
 

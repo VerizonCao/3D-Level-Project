@@ -38,7 +38,16 @@ public class FireCamp : MonoBehaviour
                 // switch to winter
                 // still use spring as we 
                 GameManager.Instance.playerPosition = player.transform.position;
-                StartCoroutine(WaitAndExecute(() => GameManager.Instance.SwitchSeason(GameManager.Season.Winter), 5f));
+
+                GameManager.Instance.playerSpeaking.text = "Fire and Fire";
+                GameManager.Instance.playerSpeaking.enabled = true;
+
+
+                StartCoroutine(WaitAndExecute(() =>
+                {
+                    GameManager.Instance.playerSpeaking.enabled = false;
+                    GameManager.Instance.SwitchSeason(GameManager.Season.Winter);
+                }, 5f));
             }
 
             prompt.enabled = true;

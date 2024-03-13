@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Canvas targetCanvas;
     [SerializeField] public Text uppertext;
     [SerializeField] public Text door;
+    [SerializeField] public Text playerSpeaking;
 
     [Header(" - Puzzle Photo - ")]
     [SerializeField] private GameObject scarecrowPuzzlePhoto;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public bool pickedCarrot = false;
     public bool pickedBoots = false;
+
+    private bool firstScene = true;
 
     private void Awake()
     {
@@ -60,6 +64,7 @@ public class GameManager : MonoBehaviour
         snowmanPuzzlePhoto.SetActive(false);
         birdPuzzlePhoto.SetActive(false);
         picnicPuzzlePhoto.SetActive(false);
+        playerSpeaking.enabled = false;
     }
     public void SwitchSeason(Season newSeason)
     {
@@ -145,6 +150,47 @@ public class GameManager : MonoBehaviour
                 Debug.LogError("Items parent not found on the target canvas.");
             }
         }
+
+        if (!firstScene)
+        {
+            switch (season)
+            {
+                case Season.Spring:
+                    playerSpeaking.color = new Color(102f / 255f, 255f / 255f, 102f / 255f);
+                    playerSpeaking.text = "I like the bloom";
+                    playerSpeaking.enabled = true;
+                    StartCoroutine(WaitAndExecute(() => playerSpeaking.enabled = false, 2f));
+                    break;
+                case Season.Summer:
+                    playerSpeaking.color = new Color(255f / 255f, 255f / 255f, 102f / 255f);
+                    playerSpeaking.text = "Yay, it's so sunny and warm";
+                    playerSpeaking.enabled = true;
+                    StartCoroutine(WaitAndExecute(() => playerSpeaking.enabled = false, 2f));
+                    break;
+                case Season.Fall:
+                    playerSpeaking.color = new Color(255f / 255f, 165f / 255f, 0f / 255f);
+                    playerSpeaking.text = "Red, yellow, and orange";
+                    playerSpeaking.enabled = true;
+                    StartCoroutine(WaitAndExecute(() => playerSpeaking.enabled = false, 2f));
+                    break;
+                case Season.Winter:
+                    playerSpeaking.color = new Color(0f / 255f, 128f / 255f, 255f / 255f);
+                    playerSpeaking.text = "Wow, this is getting cold";
+                    playerSpeaking.enabled = true;
+                    StartCoroutine(WaitAndExecute(() => playerSpeaking.enabled = false, 2f));
+                    break;
+            }
+        }
+
+        firstScene = false;
+
+        
+    }
+
+    IEnumerator WaitAndExecute(Action action, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        action();
     }
 
     private void OnDestroy()
@@ -278,7 +324,7 @@ public class GameManager : MonoBehaviour
             switch(dialogName)
             {
                 case ("scarecrowNotSolved"):
-                    uppertext.text = "Hi, I am Scarecrow, can you bring me a flower?";
+                    uppertext.text = "Hi, I am Scarecrow, can you bring me a special flower?";
                     uppertext.enabled = true;
                     break;
                 case ("scarecrowSolved"):
