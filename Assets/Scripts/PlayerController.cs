@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
     bool onRoof = false;
     [SerializeField] private float maxJumpForce = 150;
     [SerializeField] private float maxJumpForceOnRoof = 100;
-    [SerializeField][Range(0f, 1f)] private float groundFriction = 0.97f;
+    [SerializeField][Range(0f, 1f)] private float groundFriction = 0.98f;
     [SerializeField][Range(0f, 1f)] private float airFriction = 0.95f;
 
 
@@ -186,9 +186,17 @@ public class PlayerController : MonoBehaviour {
 
         if (dirVector != Vector3.zero && animState != AnimState.jumping)
         {
-            // if the player is not jumping, we play walking anim
-            animState = AnimState.walking;
-            animator.SetInteger("PlayerState", (int)animState);
+            if (animState == AnimState.jumping)
+            {
+                // still do the jump anim, don't switch to walk
+            }
+            else
+            {
+                // if the player is not jumping, we play walking anim
+                animState = AnimState.walking;
+                animator.SetInteger("PlayerState", (int)animState);
+            }
+            
         }
         else if (dirVector == Vector3.zero && animState != AnimState.jumping && animState != AnimState.sitting)
         {
@@ -197,8 +205,17 @@ public class PlayerController : MonoBehaviour {
             animator.SetInteger("PlayerState", (int)animState);
         }
 
-        // Apply Movement
-        rb.AddForce(dirVector * currentMomentum * 2, ForceMode.Force);
+        //don't add force if the player is still in jump anim
+        if (animState == AnimState.jumping && currentState == playerState.grounded)
+        {
+
+        }
+        else
+        {
+            // Apply Movement
+            rb.AddForce(dirVector * currentMomentum * 2, ForceMode.Force);
+        }
+        
 
 
 

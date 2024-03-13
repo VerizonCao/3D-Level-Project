@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8620153548961152939}
   - component: {fileID: 2376016532622566203}
   - component: {fileID: 2122914317749971345}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934133477411535889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762697420913350407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadderObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 4251099093617731848}
   - component: {fileID: 3237013077272632440}
   - component: {fileID: 8901857290082073305}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3678602513827549947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: startPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,6 +304,10 @@ PrefabInstance:
     - target: {fileID: 1438797800468804, guid: 7087784e228be8745af45599a5130532, type: 3}
       propertyPath: m_Name
       value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438797800468804, guid: 7087784e228be8745af45599a5130532, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4891787282750124, guid: 7087784e228be8745af45599a5130532, type: 3}
       propertyPath: m_LocalScale.x
@@ -367,6 +371,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1438797800468804, guid: 7087784e228be8745af45599a5130532, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8088090138984043775}
+    - targetCorrespondingSourceObject: {fileID: 1438797800468804, guid: 7087784e228be8745af45599a5130532, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9207341610994840244}
   m_SourcePrefab: {fileID: 100100000, guid: 7087784e228be8745af45599a5130532, type: 3}
 --- !u!4 &4902910447288245239 stripped
 Transform:
@@ -395,6 +402,28 @@ MonoBehaviour:
   ladderStart: {fileID: 3678602513827549947}
   ladderEnd: {fileID: 5934133477411535889}
   player: {fileID: 0}
+--- !u!64 &9207341610994840244
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908605332271935519}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5a5a8e9d7228e204a91c0fb79c12479b, type: 3}
 --- !u!1001 &5549845324566824224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -458,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 3143178297570469043, guid: fbf11694368af444fbaf0e890d0b9fc0, type: 3}
       propertyPath: m_Name
       value: DetectionCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143178297570469043, guid: fbf11694368af444fbaf0e890d0b9fc0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

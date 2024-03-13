@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42221254, g: 0.64316183, b: 0.793691, a: 1}
+  m_IndirectSpecularColor: {r: 0.42224, g: 0.6431838, b: 0.79369, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -631,7 +631,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33256207}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9751,7 +9751,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622744639}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15850,7 +15850,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063638983}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16721,6 +16721,10 @@ PrefabInstance:
     - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: baseMomentum
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
+      propertyPath: groundFriction
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 7074617436918061651, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18452,7 +18456,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204390526}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -24607,7 +24611,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708958584}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -25467,7 +25471,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745732536}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -26782,7 +26786,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815187706}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27538,7 +27542,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850564277}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c28d9ff5fc0c8c4fbd771cf8ff123f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
