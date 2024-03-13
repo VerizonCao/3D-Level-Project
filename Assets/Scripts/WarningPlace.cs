@@ -24,15 +24,22 @@ public class WarningPlace : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
-        GameManager.Instance.warning.text = warnText;
-        GameManager.Instance.warning.enabled = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.warning.text = warnText;
+            GameManager.Instance.warning.enabled = true;
+        }
+        
 
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        GameManager.Instance.warning.enabled = false;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.warning.enabled = false;
+        }
+            
     }
 }
