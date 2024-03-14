@@ -14,6 +14,8 @@ public class EndingCamera : MonoBehaviour
 
     private bool isMoving = false;
 
+    //public float rotationSpeed = 5.0f; // Speed of rotation
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,12 @@ public class EndingCamera : MonoBehaviour
             float speed = 2f;  //hardcode for now
 
             _camera.transform.position = Vector3.MoveTowards(_camera.transform.position, end.position, Time.deltaTime * speed);
+
+            //// Determine the target rotation. This could be towards a target object or a specific Quaternion
+            //Quaternion targetRotation = Quaternion.LookRotation(end.position - _camera.transform.position);
+
+            //// Rotate the camera towards the target rotation
+            //_camera.transform.rotation = Quaternion.RotateTowards(_camera.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
@@ -42,12 +50,16 @@ public class EndingCamera : MonoBehaviour
 
         seasonsPuzzle.Add(1);
 
+        bool gameFinish = false;
+
         if (seasonsPuzzle.Count == 4)
         {
             // finish all puzzles, light the photo and switch to lighting ending.
+            gameFinish = true;
         }
 
         _camera.transform.position = start.position;
+        //_camera.transform.rotation = start.rotation;
 
         PlayerController player = FindObjectOfType<PlayerController>();
 
@@ -73,13 +85,21 @@ public class EndingCamera : MonoBehaviour
 
         isMoving = false;
 
-
-        yield return new WaitForSeconds(2f);
-
+        if (gameFinish)
+        {
+            GameManager.Instance.changePhotoEndingOpen();
+        }
+        yield return new WaitForSeconds(1.5f);
+        if (gameFinish)
+        {
+            GameManager.Instance.changePhotoEndingClose();
+        }
+        yield return new WaitForSeconds(0.5f);
         // switch back to player camera
         player.openPlayerCamera();
         _camera.enabled = false;
         _camera.transform.position = start.position;
+        //_camera.transform.rotation = start.rotation;
     }
 
     public void TurnOnAndCloseOnceReachEnd(string photo)

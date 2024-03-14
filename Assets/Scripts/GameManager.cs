@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject momPuzzlePhoto;
     [SerializeField] private GameObject dadPuzzlePhoto;
     [SerializeField] private GameObject dogPuzzlePhoto;
+    [SerializeField] private Material photoMaterial;
 
     [SerializeField] EndingCamera endingCamera;
 
@@ -444,5 +445,20 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void changePhotoEndingOpen()
+    {
+        // set material light on
+        photoMaterial.SetFloat("_Metallic", 1f);
+        photoMaterial.SetFloat("_Glossiness", 1f);
+    }
+
+
+    public void changePhotoEndingClose()
+    {
+        // set material light on
+        photoMaterial.SetFloat("_Metallic", 0);
+        photoMaterial.SetFloat("_Glossiness", 0.5f);
     }
 }
