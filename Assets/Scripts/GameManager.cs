@@ -50,6 +50,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Light lighting1;
     [SerializeField] Light fireLight;
 
+    [Header("Background Music")]
+    [SerializeField] private AudioClip bgmClip;
+    private AudioSource bgmSource;
+    [Range(0f, 1f)]
+    [SerializeField] private float bgmVolume = 0.5f;
+
     public bool pickedCarrot = false;
     public bool pickedBoots = false;
 
@@ -72,6 +78,11 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.loop = true;
+        bgmSource.clip = bgmClip;
+        bgmSource.volume = bgmVolume;
+        bgmSource.Play();
     }
     private void Start()
     {
@@ -224,7 +235,10 @@ public class GameManager : MonoBehaviour
 
         firstScene = false;
 
-        
+        if (bgmSource != null && !bgmSource.isPlaying)
+        {
+            bgmSource.Play();
+        }
     }
 
     public void TurnOnAndCloseOnceReachEnd(string photo)
