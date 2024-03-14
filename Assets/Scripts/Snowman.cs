@@ -43,6 +43,7 @@ public class Snowman : MonoBehaviour
                     GameManager.Instance.AddItem("SnowmanPuzzlePhoto");
                     photoCollected = true;
                     GameManager.Instance.PuzzlePhotoActive("snowman");
+                    GameManager.Instance.FamilyPhotoActive("dad");
                 }
 
             }

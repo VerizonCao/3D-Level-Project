@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject snowmanPuzzlePhoto;
     [SerializeField] private GameObject birdPuzzlePhoto;
     [SerializeField] private GameObject picnicPuzzlePhoto;
+    [Space]
+    [SerializeField] private GameObject mePuzzlePhoto;
+    [SerializeField] private GameObject momPuzzlePhoto;
+    [SerializeField] private GameObject dadPuzzlePhoto;
+    [SerializeField] private GameObject dogPuzzlePhoto;
 
     public bool pickedCarrot = false;
     public bool pickedBoots = false;
@@ -65,6 +70,12 @@ public class GameManager : MonoBehaviour
         snowmanPuzzlePhoto.SetActive(false);
         birdPuzzlePhoto.SetActive(false);
         picnicPuzzlePhoto.SetActive(false);
+
+        mePuzzlePhoto.SetActive(false); 
+        momPuzzlePhoto.SetActive(false);    
+        dadPuzzlePhoto.SetActive(false);
+        dogPuzzlePhoto.SetActive(false);
+
         playerSpeaking.enabled = false;
         warning.enabled = false;
     }
@@ -384,5 +395,25 @@ public class GameManager : MonoBehaviour
     public void PlayerLeave()
     {
         playerEntered = false;
+    }
+
+    public void FamilyPhotoActive(string memberName)
+    {
+        switch (memberName)
+        {
+            case ("me"):
+                mePuzzlePhoto.SetActive(true);
+                break;
+            case ("mom"):
+                momPuzzlePhoto.SetActive(true);
+                break;
+            case ("dad"):
+                dadPuzzlePhoto.SetActive(true);
+                break;
+            case ("dog"):
+                dogPuzzlePhoto.SetActive(true);
+                break;
+        }
+
     }
 }
