@@ -10,6 +10,8 @@ public class EndingCamera : MonoBehaviour
     [SerializeField] Transform start;
     [SerializeField] Transform end;
 
+    List<int> seasonsPuzzle = new List<int>();
+
     private bool isMoving = false;
 
     // Start is called before the first frame update
@@ -37,6 +39,14 @@ public class EndingCamera : MonoBehaviour
 
     IEnumerator Work(string photo)
     {
+
+        seasonsPuzzle.Add(1);
+
+        if (seasonsPuzzle.Count == 4)
+        {
+            // finish all puzzles, light the photo and switch to lighting ending.
+        }
+
         _camera.transform.position = start.position;
 
         PlayerController player = FindObjectOfType<PlayerController>();

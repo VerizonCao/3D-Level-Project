@@ -36,10 +36,10 @@ public class Scarecrow : MonoBehaviour
 
                 if (!photoCollected)
                 {
-                    GameManager.Instance.AddItem("Photo1");
+                    GameManager.Instance.AddItem("SummerPhoto");
                     photoCollected = true;
                     GameManager.Instance.PuzzlePhotoActive("scarecrow");
-                    GameManager.Instance.FamilyPhotoActive("me");
+                    //GameManager.Instance.FamilyPhotoActive("me");
                 }
 
             }
