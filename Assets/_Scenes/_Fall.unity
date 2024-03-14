@@ -34377,6 +34377,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2318982469884337917, guid: 10b3d9ac6607b374391e47672b29bd7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318982469884337917, guid: 10b3d9ac6607b374391e47672b29bd7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4197687015420835812, guid: 10b3d9ac6607b374391e47672b29bd7c, type: 3}
       propertyPath: doorText
       value: 

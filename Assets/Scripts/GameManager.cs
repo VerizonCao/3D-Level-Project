@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     public bool birdPhotoFind = false;
 
+    public bool gameEnd = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -471,5 +473,11 @@ public class GameManager : MonoBehaviour
     {
         lighting1.intensity = 0f;
         fireLight.intensity = 0f;
+    }
+
+    public void disableAll()
+    {
+        targetCanvas.enabled = false;
+
     }
 }

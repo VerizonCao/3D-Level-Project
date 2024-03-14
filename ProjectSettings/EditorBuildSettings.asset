@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/_Winter.unity
     guid: 8e6610cd4c2705948a81f5ecc0af8a3c
+  - enabled: 1
+    path: Assets/_Scenes/end.unity
+    guid: eb844a9c4760e494c808d40ebc5433a7
   m_configObjects: {}

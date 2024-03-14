@@ -50,7 +50,7 @@ public class EndingCamera : MonoBehaviour
 
         seasonsPuzzle.Add(1);
 
-        bool gameFinish = false;
+        bool gameFinish = true;
 
         if (seasonsPuzzle.Count == 4)
         {
@@ -89,18 +89,19 @@ public class EndingCamera : MonoBehaviour
         {
             GameManager.Instance.changePhotoEndingOpen();
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.3f);
         if (gameFinish)
         {
             GameManager.Instance.changePhotoEndingClose();
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.7f);
         // switch back to player camera
         player.openPlayerCamera();
         _camera.enabled = false;
         _camera.transform.position = start.position;
         //_camera.transform.rotation = start.rotation;
         GameManager.Instance.gameEndLight();
+        GameManager.Instance.gameEnd = true;
     }
 
     public void TurnOnAndCloseOnceReachEnd(string photo)
