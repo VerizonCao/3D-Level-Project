@@ -18558,11 +18558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: maxMomentum
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: baseMomentum
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
       propertyPath: groundFriction
