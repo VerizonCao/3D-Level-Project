@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     private bool firstScene = true;
 
+    public bool birdPhotoFind = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -143,6 +145,13 @@ public class GameManager : MonoBehaviour
             //remove boots
             GameObject boots = GameObject.FindWithTag("Boots");
             Destroy(boots);
+        }
+
+        if (birdPhotoFind)
+        {
+            //remove boots
+            GameObject birdPhoto = GameObject.FindWithTag("BirdPhoto");
+            Destroy(birdPhoto);
         }
 
 

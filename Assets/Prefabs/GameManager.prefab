@@ -67,6 +67,7 @@ MonoBehaviour:
   dogPuzzlePhoto: {fileID: 7588367732582336898}
   pickedCarrot: 0
   pickedBoots: 0
+  birdPhotoFind: 0
 --- !u!1001 &5295066638356468264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,9 +242,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822036549929867398, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 520
+      objectReference: {fileID: 0}
+    - target: {fileID: 822036549929867398, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1376996184493700318, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
       propertyPath: m_Name
       value: MainUI 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861174410606420080, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 520
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861174410606420080, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523642204590114522, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 520
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523642204590114522, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532506844235088379, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 520
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532506844235088379, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7600844204864520885, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
       propertyPath: m_Color.b
@@ -273,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8876524931197309964, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d97a8e8492059a244a7ff422384c8db4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

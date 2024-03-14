@@ -8,6 +8,7 @@ TagManager:
   - MainUI
   - Boots
   - Carrot
+  - BirdPhoto
   layers:
   - Default
   - TransparentFX
