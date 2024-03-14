@@ -53,6 +53,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 6450667720065753101, guid: 1168f1ae2f97b354684d0d61dfba75d8, type: 3}
   refuseTeleport: 0
   playerEntered: 0
+  player: {fileID: 2798741195861534418, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
   targetCanvas: {fileID: 4563279465575924910}
   uppertext: {fileID: 2807173385349310015}
   door: {fileID: 3832173049227656932}

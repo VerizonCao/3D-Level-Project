@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool refuseTeleport = false;
     [SerializeField] bool playerEntered = false;
+    //[SerializeField] private GameObject player;
 
     [Header("UI")]
     [SerializeField] private Canvas targetCanvas;
@@ -103,6 +104,12 @@ public class GameManager : MonoBehaviour
     }
     public void SwitchSeason(Season newSeason)
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObject != null)
+        {
+            playerPosition = playerObject.transform.position;
+        }
         switch (newSeason)
         {
             case Season.Spring:
