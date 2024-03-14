@@ -10,6 +10,8 @@ TagManager:
   - Carrot
   - BirdPhoto
   - RiverPuzzle
+  - LightingMain
+  - LightFire
   layers:
   - Default
   - TransparentFX

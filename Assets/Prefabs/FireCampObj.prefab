@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7776220605922052906, guid: 614b31881e31e42439f8d9d3e9f81042, type: 3}
+      propertyPath: m_TagString
+      value: LightFire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -320,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionCircle: {fileID: 1370313200872681281}
   prompt: {fileID: 6985089499807392977}
+  player: {fileID: 0}
 --- !u!1001 &7694807423990738499
 PrefabInstance:
   m_ObjectHideFlags: 0

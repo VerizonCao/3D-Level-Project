@@ -33612,6 +33612,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191128803903927226, guid: 5e9eda0588a72004ca32217d9d239e7f, type: 3}
+      propertyPath: m_TagString
+      value: LightFire
+      objectReference: {fileID: 0}
     - target: {fileID: 4552187128411418695, guid: 5e9eda0588a72004ca32217d9d239e7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.32156
@@ -35397,7 +35401,7 @@ GameObject:
   - component: {fileID: 2074746063}
   m_Layer: 0
   m_Name: Directional Light (1)
-  m_TagString: Untagged
+  m_TagString: LightingMain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

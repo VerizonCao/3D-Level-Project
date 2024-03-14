@@ -100,6 +100,7 @@ public class EndingCamera : MonoBehaviour
         _camera.enabled = false;
         _camera.transform.position = start.position;
         //_camera.transform.rotation = start.rotation;
+        GameManager.Instance.gameEndLight();
     }
 
     public void TurnOnAndCloseOnceReachEnd(string photo)

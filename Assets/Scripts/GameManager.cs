@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Material photoMaterial;
 
     [SerializeField] EndingCamera endingCamera;
+    [SerializeField] Light lighting1;
+    [SerializeField] Light fireLight;
 
     public bool pickedCarrot = false;
     public bool pickedBoots = false;
@@ -136,7 +138,10 @@ public class GameManager : MonoBehaviour
             
         }
 
-        if(pickedCarrot)
+        lighting1 = GameObject.FindWithTag("LightingMain").GetComponent<Light>();
+        fireLight = GameObject.FindWithTag("LightFire").GetComponent<Light>();
+
+        if (pickedCarrot)
         {
             //remove carrot
             GameObject carrot = GameObject.FindWithTag("Carrot");
@@ -460,5 +465,11 @@ public class GameManager : MonoBehaviour
         // set material light on
         photoMaterial.SetFloat("_Metallic", 0);
         photoMaterial.SetFloat("_Glossiness", 0.5f);
+    }
+
+    public void gameEndLight()
+    {
+        lighting1.intensity = 0f;
+        fireLight.intensity = 0f;
     }
 }
