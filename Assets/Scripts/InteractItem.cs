@@ -58,7 +58,14 @@ public class InteractItem : MonoBehaviour
                     UISetActive();
                     break;
                 case ItemType.ConsumeItem:
-                    if (GameManager.Instance.itemList.Contains(requiredItemName))
+                    if (requiredItemName != "Bird")
+                    {
+                        if (GameManager.Instance.itemList.Contains(requiredItemName))
+                        {
+                            UISetActive();
+                        }
+                    }
+                    else
                     {
                         UISetActive();
                     }
@@ -87,6 +94,10 @@ public class InteractItem : MonoBehaviour
                         Destroy(gameObject);
                         break;
                     case ItemType.ConsumeItem:
+                        if (requiredItemName == "Bird")
+                        {
+                            puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);
+                        }
                         if (GameManager.Instance.itemList.Contains(requiredItemName))
                         {             
                             if (requiredItemName == "Boots")
@@ -98,6 +109,7 @@ public class InteractItem : MonoBehaviour
                                     GameManager.Instance.UseItem(requiredItemName);
                                 }
                             }
+
                             else
                             {
                                 puzzleItem.SendMessage("SolvePuzzle", SendMessageOptions.DontRequireReceiver);

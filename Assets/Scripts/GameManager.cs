@@ -329,16 +329,16 @@ public class GameManager : MonoBehaviour
 
             switch (photoName)
             {
-                case "scarecrow":
+                case "snow":
                     scarecrowPuzzlePhoto.SetActive(true);
                     break;
-                case "snowman":
+                case "bird":
                     snowmanPuzzlePhoto.SetActive(true);
                     break;
-                case "bird":
+                case "picnic":
                     birdPuzzlePhoto.SetActive(true);
                     break;
-                case "picnic":
+                case "scarecrow":
                     picnicPuzzlePhoto.SetActive(true);
                     break;
                 default:
