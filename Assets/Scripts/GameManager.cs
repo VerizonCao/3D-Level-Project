@@ -281,7 +281,8 @@ public class GameManager : MonoBehaviour
     private void CreateItemUI()
     {
         // Instantiate a new itemPrefab as a child of itemsParent
-        GameObject newItemObject = Instantiate(itemPrefab, itemsParent);
+        GameObject newItemObject = Instantiate(itemPrefab);
+        newItemObject.transform.SetParent(itemsParent, false);
         Text itemNameText = newItemObject.transform.Find("Item Name").GetComponent<Text>();
         newItemObject.name = itemList[itemList.Count - 1];
 
