@@ -18355,6 +18355,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8547219553742717640, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1977205282}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24455,7 +24459,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5767326864023202537, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
   m_PrefabInstance: {fileID: 327701}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1977205282}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 782893a7d4487fa48b9d69cd99ff8ac9, type: 3}
@@ -40908,6 +40912,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8554979865546078707, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
   m_PrefabInstance: {fileID: 1972660774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977205282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798741195861534418, guid: b77c22d60fa8cf14aba36f8d18e3fc72, type: 3}
+  m_PrefabInstance: {fileID: 327701}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1983411733
 PrefabInstance:

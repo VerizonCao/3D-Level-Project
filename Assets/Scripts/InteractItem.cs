@@ -7,7 +7,7 @@ public class InteractItem : MonoBehaviour
     [Header("General")]
     [SerializeField] private GameObject interactUI;
     [SerializeField] private Transform UILocation;
-    [SerializeField] private PlayerController player;
+    [SerializeField] private GameObject player;
     public DetectionCircle detectionCircle;
     private Camera mainCamera;
     public enum ItemType
