@@ -200,6 +200,14 @@ public class GameManager : MonoBehaviour
                     playerSpeaking.text = "Wow, this is getting cold";
                     playerSpeaking.enabled = true;
                     StartCoroutine(WaitAndExecute(() => playerSpeaking.enabled = false, 2f));
+
+                    //remove river puzzle if player has the shoe
+                    if(itemList.Contains("Boots"))
+                    {
+                        GameObject river = GameObject.FindWithTag("RiverPuzzle");
+                        Destroy(river);
+                    }
+                      
                     break;
             }
         }

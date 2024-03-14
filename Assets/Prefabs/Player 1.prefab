@@ -140,8 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 2
   animState: 0
-  baseMomentum: 6
-  maxMomentum: 12
+  currentMomentum: 0
+  currentAcceleration: 0
+  baseMomentum: 11
+  maxMomentum: 22
   groundAcceleration: 1
   gravityStrength: 32
   onRoofGravityStrength: 32
