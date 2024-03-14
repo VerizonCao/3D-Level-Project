@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dadPuzzlePhoto;
     [SerializeField] private GameObject dogPuzzlePhoto;
 
+    [SerializeField] EndingCamera endingCamera;
+
     public bool pickedCarrot = false;
     public bool pickedBoots = false;
 
@@ -215,6 +217,15 @@ public class GameManager : MonoBehaviour
         firstScene = false;
 
         
+    }
+
+    public void TurnOnAndCloseOnceReachEnd(string photo)
+    {
+        if (photo == "none")
+        {
+            return;
+        }
+        endingCamera.TurnOnAndCloseOnceReachEnd(photo);
     }
 
     IEnumerator WaitAndExecute(Action action, float delay)

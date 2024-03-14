@@ -32,7 +32,9 @@ public class birdPhoto : MonoBehaviour
                     photoCollected = true;
                     GameManager.Instance.birdPhotoFind = true;
                     GameManager.Instance.PuzzlePhotoActive("bird");
-                    GameManager.Instance.FamilyPhotoActive("dog");
+                    //GameManager.Instance.FamilyPhotoActive("dog");
+                    //show ending camera
+                    //GameManager.Instance.TurnOnAndCloseOnceReachEnd("dog");
                     Destroy(gameObject);
                 }
             }
