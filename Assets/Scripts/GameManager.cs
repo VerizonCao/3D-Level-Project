@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Text door;
     [SerializeField] public Text playerSpeaking;
     [SerializeField] public Text warning;
+    [SerializeField] private Text seasonLabel;
+    [SerializeField] private bool useseasonLabel;
 
     [Header(" - Puzzle Photo - ")]
     [SerializeField] private GameObject scarecrowPuzzlePhoto;
@@ -267,6 +269,13 @@ public class GameManager : MonoBehaviour
         {
             uppertext.enabled = false;
         }
+        if (useseasonLabel)
+        {
+            SeasonLabelUpdate();
+        }
+        else
+        {
+        }
     }
 
     // Items Logic
@@ -493,5 +502,31 @@ public class GameManager : MonoBehaviour
     {
         targetCanvas.enabled = false;
 
+    }
+    void SeasonLabelUpdate()
+    {
+        switch (season)
+        {
+            case Season.Spring:
+                seasonLabel.color = new Color(102f / 255f, 255f / 255f, 102f / 255f);
+                seasonLabel.text = "Spring";
+                seasonLabel.enabled = true;
+                break;
+            case Season.Summer:
+                seasonLabel.color = new Color(255f / 255f, 255f / 255f, 102f / 255f);
+                seasonLabel.text = "Summer";
+                seasonLabel.enabled = true;
+                break;
+            case Season.Fall:
+                seasonLabel.color = new Color(255f / 255f, 165f / 255f, 0f / 255f);
+                seasonLabel.text = "Fall";
+                seasonLabel.enabled = true;
+                break;
+            case Season.Winter:
+                seasonLabel.color = new Color(0f / 255f, 128f / 255f, 255f / 255f);
+                seasonLabel.text = "Winter";
+                seasonLabel.enabled = true;
+                break;
+        }
     }
 }

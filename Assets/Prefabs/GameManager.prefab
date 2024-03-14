@@ -58,6 +58,8 @@ MonoBehaviour:
   door: {fileID: 3832173049227656932}
   playerSpeaking: {fileID: 3997172385177045055}
   warning: {fileID: 1333536179541288183}
+  seasonLabel: {fileID: 833026756699357129}
+  useseasonLabel: 1
   scarecrowPuzzlePhoto: {fileID: 9221982986705645949}
   snowmanPuzzlePhoto: {fileID: 438812007945788992}
   birdPuzzlePhoto: {fileID: 4459224640601290262}
@@ -70,6 +72,8 @@ MonoBehaviour:
   endingCamera: {fileID: 2658207526773538573}
   lighting1: {fileID: 0}
   fireLight: {fileID: 0}
+  bgmClip: {fileID: 0}
+  bgmVolume: 0.5
   pickedCarrot: 0
   pickedBoots: 0
   birdPhotoFind: 0
@@ -366,6 +370,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5303116005263588042, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
   m_PrefabInstance: {fileID: 5732672047291851914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &833026756699357129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4900210725765618499, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+  m_PrefabInstance: {fileID: 5732672047291851914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1333536179541288183 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6705621034840932477, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
