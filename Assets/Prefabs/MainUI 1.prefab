@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 5532506844235088379}
   - component: {fileID: 8731073962375854104}
   - component: {fileID: 319366288220329885}
+  - component: {fileID: 204729051133543654}
   m_Layer: 5
   m_Name: Picnic Photo
   m_TagString: Untagged
@@ -363,6 +364,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &204729051133543654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641850344217496619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e7f80d7f35474f85e434d19ab90aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSeconds: 3
 --- !u!1 &3365297261060239927
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +467,7 @@ GameObject:
   - component: {fileID: 822036549929867398}
   - component: {fileID: 1931943303574984817}
   - component: {fileID: 1713524029582258768}
+  - component: {fileID: 2035069408719161276}
   m_Layer: 5
   m_Name: Scarecrow Photo
   m_TagString: Untagged
@@ -518,6 +533,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2035069408719161276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491866892726785527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e7f80d7f35474f85e434d19ab90aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSeconds: 10
 --- !u!1 &5303116005263588042
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +557,7 @@ GameObject:
   - component: {fileID: 2861174410606420080}
   - component: {fileID: 3075677891654075850}
   - component: {fileID: 3446332993491419571}
+  - component: {fileID: 5497999348770407277}
   m_Layer: 5
   m_Name: Snowman Photo
   m_TagString: Untagged
@@ -594,6 +623,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5497999348770407277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303116005263588042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e7f80d7f35474f85e434d19ab90aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSeconds: 3
 --- !u!1 &5529171487818785380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1319,7 @@ GameObject:
   - component: {fileID: 3523642204590114522}
   - component: {fileID: 1462718051742247862}
   - component: {fileID: 8876524931197309964}
+  - component: {fileID: 1489058035790030997}
   m_Layer: 5
   m_Name: Bird Photo
   m_TagString: Untagged
@@ -1342,6 +1385,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1489058035790030997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8245198070855307932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e7f80d7f35474f85e434d19ab90aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSeconds: 3
 --- !u!1 &8658668959280423490
 GameObject:
   m_ObjectHideFlags: 0

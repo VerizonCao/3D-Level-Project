@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000010194317196}
   - component: {fileID: 33000011082121960}
   - component: {fileID: 23000010868730278}
-  - component: {fileID: 64000012418579600}
+  - component: {fileID: 4827180573889671140}
   m_Layer: 0
   m_Name: Corn_Fruit
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64000012418579600
-MeshCollider:
+--- !u!136 &4827180573889671140
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300010, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.10830189
+  m_Height: 0.6067964
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
