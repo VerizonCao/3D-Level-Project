@@ -29,11 +29,15 @@ public class Ladder : MonoBehaviour
             // player enter the 1st camera and switch scene
             if (Input.GetKeyDown(KeyCode.E))
             {
-                player.lockFirstCamera = true;
+                //player.lockFirstCamera = true;
                 // switch to 1d camera
                 player.switchCamera(true);
                 // climb to the roof
                 player.transform.position = ladderStart.position;
+                //remove player's speed
+                player.currentAcceleration = 0;
+                player.currentMomentum = 0;
+                player.rb.velocity = Vector3.zero;
                 isMoving = true;
                 //return to 3d
             }
@@ -54,7 +58,7 @@ public class Ladder : MonoBehaviour
                 // we now arrive
                 isMoving = false;
                 player.switchCamera(false);
-                player.lockFirstCamera = false;
+                //player.lockFirstCamera = false;
             }
         }
     }

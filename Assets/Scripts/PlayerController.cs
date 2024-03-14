@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] playerState currentState = playerState.falling;
     [SerializeField] AnimState animState = AnimState.idle;
 
-    float currentMomentum = 0f;
-    float currentAcceleration = 0f;
+    public float currentMomentum = 0f;
+    public float currentAcceleration = 0f;
 
     [Header(" - Designer Variables - ")]
     [SerializeField] private float baseMomentum = 6;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
     [Header(" - References - ")]
     [SerializeField] private GameObject playerCameraPrefab;
     [Space]
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
     [SerializeField] private Transform phantomCamera;
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private Transform lookAtPoint;
