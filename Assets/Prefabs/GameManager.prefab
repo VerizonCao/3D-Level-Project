@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainUI 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1489058035790030997, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: stringName
+      value: dog
+      objectReference: {fileID: 0}
     - target: {fileID: 2641850344217496619, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -356,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 5303116005263588042, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497999348770407277, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
+      propertyPath: stringName
+      value: dad
       objectReference: {fileID: 0}
     - target: {fileID: 5532506844235088379, guid: a249b15921ebeec4f99fe365f167ab46, type: 3}
       propertyPath: m_SizeDelta.x

@@ -31,7 +31,7 @@ public class birdPhoto : MonoBehaviour
                     GameManager.Instance.AddItem("SpringPhoto");
                     photoCollected = true;
                     GameManager.Instance.birdPhotoFind = true;
-                    GameManager.Instance.PuzzlePhotoActive("bird");
+                    GameManager.Instance.PuzzlePhotoActive("picnic");
                     //GameManager.Instance.FamilyPhotoActive("dog");
                     //show ending camera
                     //GameManager.Instance.TurnOnAndCloseOnceReachEnd("dog");

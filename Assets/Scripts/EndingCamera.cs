@@ -9,7 +9,6 @@ public class EndingCamera : MonoBehaviour
     [SerializeField] Camera _camera;
     [SerializeField] Transform start;
     [SerializeField] Transform end;
-    [SerializeField] PlayerController player;
 
     private bool isMoving = false;
 
@@ -40,13 +39,15 @@ public class EndingCamera : MonoBehaviour
     {
         _camera.transform.position = start.position;
 
+        PlayerController player = FindObjectOfType<PlayerController>();
+
         // switch to ending camera
         player.closePlayerCamera();
         _camera.enabled = true;
 
         isMoving = true;
 
-        while (Vector3.Distance(_camera.transform.position, end.position) > 5f)
+        while (Vector3.Distance(_camera.transform.position, end.position) > 2f)
         {
             yield return new WaitForSeconds(0.2f);
         }

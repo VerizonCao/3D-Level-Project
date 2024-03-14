@@ -29,7 +29,7 @@ public class Bird : MonoBehaviour
                     GameManager.Instance.AddItem("birdPuzzlePhoto");
                     photoCollected = true;
                     GameManager.Instance.PuzzlePhotoActive("bird");
-                    GameManager.Instance.FamilyPhotoActive("dog");
+                    //GameManager.Instance.FamilyPhotoActive("dog");
                 }
 
             }
