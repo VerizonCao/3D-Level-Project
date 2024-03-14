@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour {
     public float firstCameraVerticalMin = -90f;
     [SerializeField] bool useFirstViewCamera = false;
     public bool lockFirstCamera = false;
+    private bool closeAllCamera = false;
 
     // Input Variables
     PlayerControls PIC;
@@ -125,6 +126,18 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void closePlayerCamera()
+    {
+        playerCamera.SetActive(false);
+        closeAllCamera = true;
+    }
+
+    public void openPlayerCamera()
+    {
+        playerCamera.SetActive(true);
+        closeAllCamera = false;
+    }
+
     void Update() {
         // Jump Start Press
         if (PIC.PlayerInput.Jump.WasPressedThisFrame() && CanJump()) {
@@ -176,6 +189,11 @@ public class PlayerController : MonoBehaviour {
             cameraPitch = Mathf.Clamp(cameraPitch, firstCameraVerticalMin, firstCameraVerticalMax);
             FirstViewCamera.transform.localEulerAngles = Vector3.right * cameraPitch;
 
+            return;
+        }
+
+        if (closeAllCamera)
+        {
             return;
         }
 
