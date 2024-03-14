@@ -7,6 +7,7 @@ public class InteractItem : MonoBehaviour
     [Header("General")]
     [SerializeField] private GameObject interactUI;
     [SerializeField] private Transform UILocation;
+    [SerializeField] private PlayerController player;
     public DetectionCircle detectionCircle;
     private Camera mainCamera;
     public enum ItemType
@@ -120,6 +121,7 @@ public class InteractItem : MonoBehaviour
                         
                         break;
                     case ItemType.SeasonChangingItem:
+                        GameManager.Instance.playerPosition = player.transform.position;
                         Season newSeason = ConvertSwitchtoSeason(switchtoSeason);
                         GameManager.Instance.SwitchSeason(newSeason);
                         break;

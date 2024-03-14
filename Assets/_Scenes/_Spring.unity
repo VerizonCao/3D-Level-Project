@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42224, g: 0.6431838, b: 0.79369, a: 1}
+  m_IndirectSpecularColor: {r: 0.42221254, g: 0.64316183, b: 0.793691, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18338,6 +18338,22 @@ PrefabInstance:
     - target: {fileID: 6518259660080498566, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
       propertyPath: m_Text
       value: I can take you to a secret place [press E]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518259660080498566, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518259660080498566, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518259660080498566, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518259660080498566, guid: eeb70b01c9146c341a9adc1836a3e452, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
