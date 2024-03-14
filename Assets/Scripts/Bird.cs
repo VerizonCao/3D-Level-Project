@@ -26,7 +26,7 @@ public class Bird : MonoBehaviour
                 GameManager.Instance.Dialog("birdSolved");
                 if (!photoCollected)
                 {
-                    GameManager.Instance.AddItem("birdPuzzlePhoto");
+                    GameManager.Instance.AddItem("WinterPhoto");
                     photoCollected = true;
                     GameManager.Instance.PuzzlePhotoActive("bird");
                     //GameManager.Instance.FamilyPhotoActive("dog");

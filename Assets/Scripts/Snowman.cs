@@ -40,10 +40,10 @@ public class Snowman : MonoBehaviour
                 GameManager.Instance.Dialog("snowmanSolved");
                 if (!photoCollected)
                 {
-                    GameManager.Instance.AddItem("SnowmanPuzzlePhoto");
+                    GameManager.Instance.AddItem("FallPhoto");
                     photoCollected = true;
-                    GameManager.Instance.PuzzlePhotoActive("snowman");
-                    GameManager.Instance.FamilyPhotoActive("dad");
+                    GameManager.Instance.PuzzlePhotoActive("snow");
+                    //GameManager.Instance.FamilyPhotoActive("dad");
                 }
 
             }
