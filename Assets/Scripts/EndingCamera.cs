@@ -50,7 +50,7 @@ public class EndingCamera : MonoBehaviour
 
         seasonsPuzzle.Add(1);
 
-        bool gameFinish = true;
+        bool gameFinish = false;
 
         if (seasonsPuzzle.Count == 4)
         {
@@ -100,8 +100,12 @@ public class EndingCamera : MonoBehaviour
         _camera.enabled = false;
         _camera.transform.position = start.position;
         //_camera.transform.rotation = start.rotation;
-        GameManager.Instance.gameEndLight();
-        GameManager.Instance.gameEnd = true;
+        if (gameFinish)
+        {
+            GameManager.Instance.gameEndLight();
+            GameManager.Instance.gameEnd = true;
+        }
+        
     }
 
     public void TurnOnAndCloseOnceReachEnd(string photo)
