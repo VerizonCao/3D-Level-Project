@@ -382,11 +382,11 @@ public class GameManager : MonoBehaviour
                     uppertext.enabled = true;
                     break;
                 case ("birdNotSolved"):
-                    uppertext.text = "Hi, I am bird, can you bring me corn?";
+                    uppertext.text = "I remember hearing this kind of sound before with someone...";
                     uppertext.enabled = true;
                     break;
                 case ("birdSolved"):
-                    uppertext.text = "Thank you!";
+                    uppertext.text = "";
                     uppertext.enabled = true;
                     break;
                 case ("picnicNotSolved"):
